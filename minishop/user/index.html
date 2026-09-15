@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YuwaShop | Công nghệ cao cấp</title>
+    <meta
+      name="description"
+      content="YuwaShop - Thương hiệu công nghệ cao cấp với các sản phẩm điện thoại, laptop, phụ kiện và giải pháp cho cuộc sống hiện đại."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+  </head>
+  <body>
+    <div class="page-loader" aria-hidden="true">
+      <div class="loader-ring"></div>
+    </div>
+
+    <header class="header">
+      <div class="container header-inner">
+        <div class="logo-wrap">
+          <a href="index.html" class="logo" aria-label="YuwaShop home">
+            <img class="brand-logo-image" src="assets/images/yuwa-logo.svg" alt="YuwaShop" />
+            <span>YuwaShop</span>
+          </a>
+        </div>
+
+        <nav class="header-menu" aria-label="Danh mục sản phẩm">
+          <a href="products.html" data-category="all" class="transition-link active">Tất cả</a>
+          <a href="products.html" data-category="phone" class="transition-link">Điện thoại</a>
+          <a href="products.html" data-category="laptop" class="transition-link">Laptop</a>
+          <a href="products.html" data-category="audio" class="transition-link">Âm thanh</a>
+          <a href="products.html" data-category="accessory" class="transition-link">Phụ kiện</a>
+          <a href="#" data-location-action="nearby">Cửa hàng gần bạn</a>
+          <a href="#" data-location-action="locations">Địa điểm</a>
+        </nav>
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input type="search" placeholder="Tìm kiếm" />
+          <button type="button" aria-label="Tìm kiếm">⌕</button>
+        </div>
+
+        <div class="header-actions">
+          <button type="button" class="header-icon cart-link" aria-label="Mở giỏ hàng" aria-expanded="false">
+            <span class="icon">🛒</span>
+            <span class="badge">3</span>
+          </button>
+          <button type="button" class="header-icon favorite-link" aria-label="Mở sản phẩm yêu thích" aria-expanded="false">
+            <span class="icon">♡</span>
+            <span class="badge favorite-badge">0</span>
+          </button>
+          <button class="login-btn" type="button">Đăng nhập</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="cart-overlay" data-cart-close></div>
+    <aside class="cart-drawer" aria-label="Giỏ hàng" aria-hidden="true">
+      <div class="cart-drawer-head">
+        <div>
+          <p class="eyebrow">Đơn hàng của bạn</p>
+          <h2>Giỏ hàng <span class="cart-item-count">(3)</span></h2>
+        </div>
+        <button type="button" class="cart-close" data-cart-close aria-label="Đóng giỏ hàng">×</button>
+      </div>
+      <div class="cart-items">
+        <article class="cart-item">
+          <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=240&q=80" alt="iPhone 15 Pro Max" />
+          <div class="cart-item-info"><h3>iPhone 15 Pro Max</h3><p>1 x 28.990.000₫</p></div>
+          <button type="button" class="cart-item-remove" aria-label="Xóa iPhone 15 Pro Max">×</button>
+        </article>
+        <article class="cart-item">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=240&q=80" alt="Laptop ASUS ROG" />
+          <div class="cart-item-info"><h3>Laptop ASUS ROG</h3><p>1 x 31.990.000₫</p></div>
+          <button type="button" class="cart-item-remove" aria-label="Xóa Laptop ASUS ROG">×</button>
+        </article>
+        <article class="cart-item">
+          <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=240&q=80" alt="Loa không dây JBL" />
+          <div class="cart-item-info"><h3>Loa không dây JBL</h3><p>1 x 5.490.000₫</p></div>
+          <button type="button" class="cart-item-remove" aria-label="Xóa Loa không dây JBL">×</button>
+        </article>
+      </div>
+      <div class="cart-drawer-foot">
+        <div class="cart-total"><span>Tạm tính</span><strong>66.470.000₫</strong></div>
+        <button type="button" class="primary-btn cart-checkout">Tiến hành thanh toán</button>
+        <a href="products.html" class="cart-continue transition-link">Tiếp tục mua sắm</a>
+      </div>
+    </aside>
+
+    <div class="auth-overlay" data-auth-close></div>
+    <aside class="auth-drawer" aria-label="Đăng nhập và đăng ký" aria-hidden="true">
+      <div class="auth-drawer-head">
+        <div class="auth-brand"><img class="brand-logo-image" src="assets/images/yuwa-logo.svg" alt="YuwaShop" /><strong>YuwaShop</strong></div>
+        <button type="button" class="auth-close" data-auth-close aria-label="Đóng đăng nhập">×</button>
+      </div>
+      <div class="auth-intro">
+        <p class="eyebrow">Tài khoản YuwaShop</p>
+        <h2>Chào mừng trở lại</h2>
+        <p>Lưu sản phẩm yêu thích, theo dõi đơn hàng và nhận ưu đãi riêng cho bạn.</p>
+      </div>
+      <div class="auth-tabs" role="tablist">
+        <button type="button" class="auth-tab active" data-auth-tab="login" role="tab">Đăng nhập</button>
+        <button type="button" class="auth-tab" data-auth-tab="register" role="tab">Đăng ký</button>
+      </div>
+      <form class="auth-form auth-form-login" data-auth-form="login">
+        <label>Email hoặc số điện thoại<input type="text" name="email" placeholder="you@example.com" required  /></label>
+        <label>Mật khẩu<div class="password-field"><input type="password" name="password" placeholder="Nhập mật khẩu" required /><button type="button" class="password-toggle" aria-label="Hiện mật khẩu">Hiện</button></div></label>
+        <div class="auth-options"><label class="remember-option"><input type="checkbox" /> Ghi nhớ đăng nhập</label><a href="#">Quên mật khẩu?</a></div>
+        <button type="submit" class="primary-btn auth-submit">Đăng nhập</button>
+      </form>
+      <form class="auth-form auth-form-register" data-auth-form="register" hidden>
+        <label>Họ và tên<input type="text" name="name" placeholder="Nguyễn Văn A" required /></label>
+        <label>Email<input type="email" name="email" placeholder="you@example.com" required /></label>
+        <label>Mật khẩu<div class="password-field"><input type="password" name="password" placeholder="Tối thiểu 8 ký tự" required /><button type="button" class="password-toggle" aria-label="Hiện mật khẩu">Hiện</button></div></label>
+        <label class="terms-option"><input type="checkbox" required /> Tôi đồng ý với điều khoản sử dụng</label>
+        <button type="submit" class="primary-btn auth-submit">Tạo tài khoản</button>
+      </form>
+      <p class="auth-note">Bằng việc tiếp tục, bạn đồng ý với chính sách của YuwaShop.</p>
+    </aside>
+
+    <main>
+      <section class="hero container">
+        <aside class="category-menu">
+          <ul>
+            <li><a href="products.html" class="transition-link"><span>📱</span>Điện thoại</a></li>
+            <li><a href="products.html" class="transition-link"><span>💻</span>Laptop</a></li>
+            <li><a href="products.html" class="transition-link"><span>🎧</span>Âm thanh</a></li>
+            <li><a href="products.html" class="transition-link"><span>⌚</span>Đồng hồ</a></li>
+            <li><a href="products.html" class="transition-link"><span>🖱️</span>Phụ kiện</a></li>
+            <li><a href="products.html" class="transition-link"><span>📷</span>Máy ảnh</a></li>
+            <li><a href="products.html" class="transition-link"><span>🧩</span>Smart Home</a></li>
+            <li><a href="products.html" class="transition-link"><span>💡</span>Đèn thông minh</a></li>
+          </ul>
+        </aside>
+
+        <div class="hero-slider">
+          <div class="slide active" style="--bg: linear-gradient(135deg, #111827, #1f2937 35%, #ef4444 100%);">
+            <div class="slide-content">
+              <span class="pill">Đổi điểm lên Deal</span>
+              <h1>Galaxy S24 Ultra</h1>
+              <p>Giảm đến 6 triệu, tặng bộ sạc nhanh 45W và bảo hành 24 tháng.</p>
+              <div class="slide-actions">
+                <a href="product-detail.html" class="primary-btn transition-link">Mua ngay</a>
+                <a href="products.html" class="secondary-btn transition-link">Xem ưu đãi</a>
+              </div>
+            </div>
+            <div class="product-visual">
+              <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80" alt="Galaxy S24 Ultra" />
+            </div>
+          </div>
+
+          <div class="slide" style="--bg: linear-gradient(135deg, #111827, #0f172a 35%, #2563eb 100%);">
+            <div class="slide-content">
+              <span class="pill">Flash Sale</span>
+              <h1>MacBook Air M3</h1>
+              <p>Đặt hàng ngay để nhận thêm gói bảo hành và quà tặng công nghệ.</p>
+              <div class="slide-actions">
+                <a href="product-detail.html" class="primary-btn transition-link">Khám phá</a>
+                <a href="products.html" class="secondary-btn transition-link">Xem mẫu</a>
+              </div>
+            </div>
+            <div class="product-visual">
+              <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80" alt="MacBook Air" />
+            </div>
+          </div>
+
+          <div class="slide" style="--bg: linear-gradient(135deg, #120f16, #1e293b 35%, #f97316 100%);">
+            <div class="slide-content">
+              <span class="pill">Giảm sâu</span>
+              <h1>Loa/Audio Pro</h1>
+              <p>Trải nghiệm âm thanh đỉnh cao với ưu đãi lên đến 40% trong tuần này.</p>
+              <div class="slide-actions">
+                <a href="products.html" class="primary-btn transition-link">Mua ngay</a>
+                <a href="product-detail.html" class="secondary-btn transition-link">Chi tiết</a>
+              </div>
+            </div>
+            <div class="product-visual">
+              <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=80" alt="Loa âm thanh" />
+            </div>
+          </div>
+
+          <div class="slider-controls">
+            <button class="slider-btn prev" type="button" aria-label="Previous slide">‹</button>
+            <button class="slider-btn next" type="button" aria-label="Next slide">›</button>
+          </div>
+        </div>
+
+        <aside class="promo-stack">
+          <div class="promo-card red">
+            <span>Giảm sốc</span>
+            <strong>70%</strong>
+            <p>Phụ kiện gaming</p>
+          </div>
+          <div class="promo-card dark">
+            <span>Miễn phí</span>
+            <strong>Vận chuyển</strong>
+            <p>Đơn từ 1.000.000đ</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Khuyến mãi hot</p>
+            <h2>Hot Sale</h2>
+          </div>
+          <a href="products.html" class="view-all transition-link">Xem tất cả</a>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card" data-product-id="1">
+            <div class="product-media">
+              <span class="discount-tag">-15%</span>
+              <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=900&q=80" alt="iPhone 15 Pro" />
+            </div>
+            <div class="product-info">
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price-row">
+                <span class="old-price">32.990.000₫</span>
+                <span class="new-price">28.990.000₫</span>
+              </div>
+              <button class="buy-btn" type="button">Thêm vào giỏ</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="2">
+            <div class="product-media">
+              <span class="discount-tag">-18%</span>
+              <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80" alt="Laptop ASUS" />
+            </div>
+            <div class="product-info">
+              <h3>Laptop ASUS ROG</h3>
+              <div class="price-row">
+                <span class="old-price">38.990.000₫</span>
+                <span class="new-price">31.990.000₫</span>
+              </div>
+              <button class="buy-btn" type="button">Thêm vào giỏ</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="3">
+            <div class="product-media">
+              <span class="discount-tag">-12%</span>
+              <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=80" alt="Loa không dây" />
+            </div>
+            <div class="product-info">
+              <h3>Loa không dây JBL</h3>
+              <div class="price-row">
+                <span class="old-price">6.290.000₫</span>
+                <span class="new-price">5.490.000₫</span>
+              </div>
+              <button class="buy-btn" type="button">Thêm vào giỏ</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="4">
+            <div class="product-media">
+              <span class="discount-tag">-22%</span>
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80" alt="Đồng hồ thông minh" />
+            </div>
+            <div class="product-info">
+              <h3>Apple Watch Series 9</h3>
+              <div class="price-row">
+                <span class="old-price">12.990.000₫</span>
+                <span class="new-price">10.090.000₫</span>
+              </div>
+              <button class="buy-btn" type="button">Thêm vào giỏ</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container promo-banner-wrap">
+        <div class="promo-banner big">
+          <div>
+            <p class="eyebrow light">Mua 1 tặng 1</p>
+            <h3>Combo Z Fold 5 + Watch</h3>
+          </div>
+          <a href="products.html" class="primary-btn transition-link">Mua combo</a>
+        </div>
+      </section>
+
+      <section class="section container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Sản phẩm mới</p>
+            <h2>Xu hướng công nghệ</h2>
+          </div>
+          <a href="products.html" class="view-all transition-link">Xem tất cả</a>
+        </div>
+
+        <div class="product-grid compact">
+          <article class="product-card" data-product-id="5">
+            <div class="product-media">
+              <span class="discount-tag">-8%</span>
+              <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=900&q=80" alt="Tai nghe Sony" />
+            </div>
+            <div class="product-info">
+              <h3>Tai nghe Sony WH-1000XM5</h3>
+              <div class="price-row">
+                <span class="old-price">8.990.000₫</span>
+                <span class="new-price">8.190.000₫</span>
+              </div>
+              <button class="buy-btn" type="button">Thêm vào giỏ</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="6">
+            <div class="product-media">
+              <span class="discount-tag">-16%</span>
+              <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=900&q=80" alt="Laptop Dell" />
+            </div>
+            <div class="product-info">
+              <h3>Laptop Dell XPS 13</h3>
+              <div class="price-row">
+                <span class="old-price">29.990.000₫</span>
+                <span class="new-price">25.090.000₫</span>
+              </div>
+              <button class="buy-btn" type="button">Thêm vào giỏ</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="7">
+            <div class="product-media">
+              <span class="discount-tag">-20%</span>
+              <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=900&q=80" alt="iPad Air" />
+            </div>
+            <div class="product-info">
+              <h3>iPad Air 2024</h3>
+              <div class="price-row">
+                <span class="old-price">17.990.000₫</span>
+                <span class="new-price">14.490.000₫</span>
+              </div>
+              <button class="buy-btn" type="button">Thêm vào giỏ</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="8">
+            <div class="product-media">
+              <span class="discount-tag">-14%</span>
+              <img src="https://images.unsplash.com/photo-1525175223357-2f5d9ea8d7af?auto=format&fit=crop&w=900&q=80" alt="Chuột gaming" />
+            </div>
+            <div class="product-info">
+              <h3>Chuột Logitech G102</h3>
+              <div class="price-row">
+                <span class="old-price">1.290.000₫</span>
+                <span class="new-price">1.090.000₫</span>
+              </div>
+              <button class="buy-btn" type="button">Thêm vào giỏ</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <h4>YuwaShop</h4>
+          <p>Khám phá công nghệ mới nhất với mức giá tốt nhất và dịch vụ hậu mãi chuyên nghiệp.</p>
+        </div>
+        <div>
+          <h5>Hỗ trợ</h5>
+          <ul>
+            <li>Chính sách bảo hành</li>
+            <li>Vận chuyển & đổi trả</li>
+            <li>Hướng dẫn thanh toán</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Liên hệ</h5>
+          <ul>
+            <li>1800 1234</li>
+            <li>support@yuwashop.vn</li>
+            <li>TP. Hồ Chí Minh</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/data-service.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

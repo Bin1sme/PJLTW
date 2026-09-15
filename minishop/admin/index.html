@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YuwaShop Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/admin-style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <div class="brand-mark">M</div>
+          <div>
+            <p class="brand-name">YuwaShop Admin</p>
+            <span>Control Center</span>
+          </div>
+        </div>
+
+        <nav class="side-nav">
+          <button class="nav-item active" type="button" data-admin-panel="home"><span>🏠</span> Home</button>
+          <button class="nav-item" type="button" data-admin-panel="analytics"><span>📊</span> Analytics</button>
+          <button class="nav-item" type="button" data-admin-panel="orders"><span>🧾</span> Orders</button>
+          <button class="nav-item" type="button" data-admin-panel="customers"><span>👥</span> Customers</button>
+          <button class="nav-item" type="button" data-admin-panel="products"><span>📦</span> Products</button>
+          <button class="nav-item" type="button" data-admin-panel="inventory"><span>🧮</span> Inventory</button>
+          <button class="nav-item" type="button" data-admin-panel="promotions"><span>🏷️</span> Promotions</button>
+          <button class="nav-item" type="button" data-admin-panel="staff"><span>🛡️</span> Staff & roles</button>
+          <button class="nav-item" type="button" data-admin-panel="audit"><span>🧭</span> Audit log</button>
+          <button class="nav-item" type="button" data-admin-panel="settings"><span>⚙️</span> Settings</button>
+        </nav>
+
+        <div class="sidebar-card">
+          <p>Monthly Revenue</p>
+          <strong>$64.2K</strong>
+          <span class="trend up">+12.8%</span>
+        </div>
+      </aside>
+
+      <main class="dashboard">
+        <header class="topbar">
+          <div class="search-box">
+            <span>⌕</span>
+            <input type="search" placeholder="Search here..." data-admin-action="global-search" />
+          </div>
+
+          <div class="topbar-actions">
+            <button class="icon-btn" type="button" aria-label="Alerts" data-admin-action="alerts">🔔<span class="icon-count">4</span></button>
+            <button class="icon-btn" type="button" aria-label="Messages" data-admin-action="messages">✉️<span class="icon-count">2</span></button>
+            <button class="admin-profile admin-profile-button" type="button" data-admin-action="profile">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80" alt="Admin avatar" />
+              <div>
+                <strong>Olivia Rhye</strong>
+                <span>Super Admin</span>
+              </div>
+            </button>
+          </div>
+        </header>
+
+        <section class="overview-grid">
+          <article class="stat-card accent-green">
+            <div class="stat-head">
+              <span>Total Revenue</span>
+              <span class="badge success">+24.2%</span>
+            </div>
+            <h3>$48,250</h3>
+            <small>Compared to last month</small>
+          </article>
+
+          <article class="stat-card accent-blue">
+            <div class="stat-head">
+              <span>Total Views</span>
+              <span class="badge info">+8.4%</span>
+            </div>
+            <h3>214.5K</h3>
+            <small>Across all channels</small>
+          </article>
+
+          <article class="stat-card accent-orange">
+            <div class="stat-head">
+              <span>New Orders</span>
+              <span class="badge warn">+6.1%</span>
+            </div>
+            <h3>1,982</h3>
+            <small>Converted this week</small>
+          </article>
+
+          <article class="stat-card accent-purple">
+            <div class="stat-head">
+              <span>Conversion</span>
+              <span class="badge alert">+12.5%</span>
+            </div>
+            <h3>4.68%</h3>
+            <small>Site-wide improvement</small>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel chart-panel large-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow dark">Performance</p>
+                <h3>Revenue Overview</h3>
+              </div>
+              <button type="button" class="ghost-btn" data-admin-action="revenue-period">This Month</button>
+            </div>
+            <canvas id="revenueChart" height="180"></canvas>
+          </div>
+
+          <div class="panel chart-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow dark">Traffic source</p>
+                <h3>Visitors by Browser</h3>
+              </div>
+            </div>
+            <div class="browser-list">
+              <div class="browser-row">
+                <div class="browser-label"><span class="dot blue"></span> Chrome</div>
+                <div class="progress-bar"><span style="width: 78%"></span></div>
+                <strong>78%</strong>
+              </div>
+              <div class="browser-row">
+                <div class="browser-label"><span class="dot green"></span> Safari</div>
+                <div class="progress-bar"><span style="width: 65%"></span></div>
+                <strong>65%</strong>
+              </div>
+              <div class="browser-row">
+                <div class="browser-label"><span class="dot orange"></span> Firefox</div>
+                <div class="progress-bar"><span style="width: 42%"></span></div>
+                <strong>42%</strong>
+              </div>
+              <div class="browser-row">
+                <div class="browser-label"><span class="dot purple"></span> Edge</div>
+                <div class="progress-bar"><span style="width: 35%"></span></div>
+                <strong>35%</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bottom-grid">
+          <div class="panel chart-panel donut-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow dark">Summary</p>
+                <h3>Sales Split</h3>
+              </div>
+            </div>
+            <div class="donut-wrap">
+              <canvas id="donutChart" height="180"></canvas>
+            </div>
+            <div class="legend-list">
+              <div><span class="dot blue"></span> Electronics</div>
+              <div><span class="dot green"></span> Appliances</div>
+              <div><span class="dot orange"></span> Accessories</div>
+            </div>
+          </div>
+
+          <div class="panel table-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow dark">Transactions</p>
+                <h3>Recent Payments Queue</h3>
+              </div>
+              <button type="button" class="ghost-btn" data-admin-action="payments">View all</button>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sam Lee</td>
+                  <td>$1,240</td>
+                  <td>08 Sep</td>
+                  <td><span class="status success">Success</span></td>
+                </tr>
+                <tr>
+                  <td>Jamie Smith</td>
+                  <td>$780</td>
+                  <td>08 Sep</td>
+                  <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>Rachel Green</td>
+                  <td>$540</td>
+                  <td>07 Sep</td>
+                  <td><span class="status canceled">Canceled</span></td>
+                </tr>
+                <tr>
+                  <td>Daniel Kim</td>
+                  <td>$1,860</td>
+                  <td>07 Sep</td>
+                  <td><span class="status success">Success</span></td>
+                </tr>
+                <tr>
+                  <td>Emma Doe</td>
+                  <td>$410</td>
+                  <td>06 Sep</td>
+                  <td><span class="status pending">Pending</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="admin-side-overlay" data-admin-panel-close></div>
+    <aside class="admin-side-panel" aria-label="Admin workspace" aria-hidden="true">
+      <div class="admin-side-head">
+        <div><p class="eyebrow dark" id="sidePanelEyebrow">Workspace</p><h2 id="sidePanelTitle">Workspace</h2></div>
+        <button class="admin-side-close" type="button" data-admin-panel-close aria-label="Close panel">×</button>
+      </div>
+      <div class="admin-side-body" id="sidePanelBody"></div>
+    </aside>
+
+    <script src="assets/js/admin-data-service.js"></script>
+    <script src="assets/js/admin.js"></script>
+  </body>
+</html>
