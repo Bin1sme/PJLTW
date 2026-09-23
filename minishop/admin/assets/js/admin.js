@@ -129,36 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
       eyebrow: 'Workspace preferences',
       title: 'Settings',
       body: '<div class="side-form"><label>Store name<input value="YuwaShop" /></label><label>Support email<input value="support@yuwashop.vn" /></label><label>Timezone<select><option>Asia/Ho_Chi_Minh</option><option>Asia/Bangkok</option></select></label><label class="side-toggle"><span>Email notifications<small>Receive daily sales summaries</small></span><input type="checkbox" checked /><i></i></label><button class="side-primary" type="button">Save changes</button></div>'
-    },
-    alerts: {
-      eyebrow: 'System center',
-      title: 'Alerts',
-      body: '<div class="side-filter-row"><span>4 unread alerts</span><button class="side-action" type="button">Mark all read</button></div><div class="side-list"><div><span class="side-avatar orange">!</span><section><strong>Low stock alert</strong><small>Laptop ASUS ROG has 6 units left · 10 min ago</small></section></div><div><span class="side-avatar blue">$</span><section><strong>New order received</strong><small>Order #YW-2048 needs confirmation · 32 min ago</small></section></div><div><span class="side-avatar purple">↗</span><section><strong>Revenue target reached</strong><small>Monthly revenue is above target · 1 hour ago</small></section></div></div>'
-    },
-    messages: {
-      eyebrow: 'Team inbox',
-      title: 'Messages',
-      body: '<div class="side-filter-row"><span>2 unread messages</span><button class="side-action" type="button">Compose</button></div><div class="side-list"><div><span class="side-avatar blue">DK</span><section><strong>Daniel Kim</strong><small>Order #YW-2048 confirmed · 12 min ago</small></section></div><div><span class="side-avatar green">YS</span><section><strong>YuwaShop Support</strong><small>Weekly report is ready · 1 hour ago</small></section></div></div><button class="side-primary" type="button">Open inbox</button>'
-    },
-    profile: {
-      eyebrow: 'Account center',
-      title: 'Admin profile',
-      body: '<div class="profile-side-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Olivia Rhye" /><h3>Olivia Rhye</h3><p>Super Admin</p><span>olivia@yuwashop.vn</span></div><div class="side-section"><h3>Quick actions</h3><button class="side-primary" type="button">Manage account</button><button class="side-secondary" type="button">Sign out</button></div>'
-    },
-    'revenue-period': {
-      eyebrow: 'Revenue overview',
-      title: 'Report period',
-      body: '<div class="side-section"><h3>Select a reporting period</h3><div class="side-segmented"><button type="button">7 days</button><button class="active" type="button">30 days</button><button type="button">90 days</button></div><label class="side-date-field">From<input type="date" value="2026-08-15" /></label><label class="side-date-field">To<input type="date" value="2026-09-14" /></label><button class="side-primary" type="button">Apply period</button></div>'
-    },
-    payments: {
-      eyebrow: 'Finance operations',
-      title: 'Payment queue',
-      body: '<div class="side-filter-row"><span>5 recent payments</span><button class="side-action" type="button">Export</button></div><div class="side-list"><div><span class="side-avatar green">$</span><section><strong>#YW-2048 · $1,240</strong><small>Sam Lee · 08 Sep</small></section><b class="stock-ok">Success</b></div><div><span class="side-avatar orange">$</span><section><strong>#YW-2047 · $780</strong><small>Jamie Smith · 08 Sep</small></section><b class="stock-low">Pending</b></div><div><span class="side-avatar purple">$</span><section><strong>#YW-2046 · $540</strong><small>Rachel Green · 07 Sep</small></section><b class="side-status canceled">Canceled</b></div></div>'
-    },
-    'global-search': {
-      eyebrow: 'Admin search',
-      title: 'Search results',
-      body: '<div class="side-search">⌕<input class="panel-search-input" type="search" placeholder="Search orders, products..." /></div><div class="side-search-results"><p>Press Enter to search the admin workspace.</p></div>'
     }
   };
 
@@ -176,19 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
       inventory: () => YuwaAdminAPI.getInventory(),
       promotions: () => YuwaAdminAPI.getPromotions(),
       staff: () => YuwaAdminAPI.getStaff(),
-      audit: () => YuwaAdminAPI.getAuditLog(),
-      alerts: () => YuwaAdminAPI.getNotifications(),
-      messages: () => YuwaAdminAPI.getMessages()
+      audit: () => YuwaAdminAPI.getAuditLog()
     };
     if (loaders[key]) loaders[key]().catch(() => null);
-
-    const panelSearchInput = sidePanelBody.querySelector('.panel-search-input');
-    const results = sidePanelBody.querySelector('.side-search-results');
-    panelSearchInput?.addEventListener('keydown', async (event) => {
-      if (event.key !== 'Enter' || !results) return;
-      const response = await YuwaAdminAPI.searchAdmin(panelSearchInput.value);
-      results.innerHTML = (response.items || []).map((item) => `<div class="search-result"><span>${item.type}</span><strong>${item.label}</strong></div>`).join('') || '<p>No results found.</p>';
-    });
 
     const saveButton = sidePanelBody.querySelector('.side-form .side-primary');
     if (saveButton) {
@@ -216,44 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
       else closePanel();
     });
   });
-
-  document.querySelectorAll('[data-admin-action]').forEach((element) => {
-    if (element.dataset.adminAction === 'global-search') return;
-    element.addEventListener('click', () => openPanel(element.dataset.adminAction));
-  });
-
-  const globalSearch = document.querySelector('[data-admin-action="global-search"]');
-  if (globalSearch) {
-    const searchBox = globalSearch.closest('.search-box');
-    searchBox.insertAdjacentHTML('afterend', '<div class="admin-search-popover" aria-hidden="true"><div class="admin-search-popover-head"><strong>Quick search</strong><button type="button" class="admin-search-close" aria-label="Close search">×</button></div><div class="admin-search-results"><p>Search orders, products, customers...</p></div></div>');
-    const searchPopover = document.querySelector('.admin-search-popover');
-    const searchResults = searchPopover.querySelector('.admin-search-results');
-    const closeSearch = () => {
-      searchPopover.classList.remove('open');
-      searchPopover.setAttribute('aria-hidden', 'true');
-    };
-    const renderSearchResults = async () => {
-      const query = globalSearch.value.trim();
-      searchPopover.classList.add('open');
-      searchPopover.setAttribute('aria-hidden', 'false');
-      if (!query) {
-        searchResults.innerHTML = '<p>Search orders, products, customers...</p>';
-        return;
-      }
-      const response = await YuwaAdminAPI.searchAdmin(query);
-      searchResults.innerHTML = (response.items || []).map((item) => `<button type="button" class="admin-search-result"><span>${item.type}</span><strong>${item.label}</strong></button>`).join('') || '<p>No results found.</p>';
-    };
-    globalSearch.addEventListener('focus', renderSearchResults);
-    globalSearch.addEventListener('input', renderSearchResults);
-    globalSearch.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeSearch();
-      if (event.key === 'Enter') renderSearchResults();
-    });
-    searchPopover.querySelector('.admin-search-close').addEventListener('click', closeSearch);
-    document.addEventListener('click', (event) => {
-      if (!searchBox.contains(event.target) && !searchPopover.contains(event.target)) closeSearch();
-    });
-  }
 
   sidePanelCloseButtons.forEach((button) => button.addEventListener('click', closePanel));
   document.addEventListener('keydown', (event) => {

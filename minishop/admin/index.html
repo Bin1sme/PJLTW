@@ -1,232 +1,787 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YuwaShop Admin Dashboard</title>
+    <title>AdminPro | Bảng điều khiển quản trị YuwaShop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/admin-style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/adminpro.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <div class="admin-shell">
-      <aside class="sidebar">
-        <div class="brand-block">
-          <div class="brand-mark">M</div>
-          <div>
-            <p class="brand-name">YuwaShop Admin</p>
-            <span>Control Center</span>
+    <div class="admin-wrapper">
+      <!-- SIDEBAR (Professional Minimalist Monochrome Design - Theo ảnh mẫu) -->
+      <aside class="admin-sidebar">
+        <!-- Brand Logo -->
+        <div class="sidebar-brand">
+          <div class="brand-icon-pro">Q</div>
+          <div class="brand-text-pro">Admin<span>Pro</span></div>
+        </div>
+
+        <!-- Sidebar User Profile (Bấm vào để thiết kế / đổi Avatar) -->
+        <div class="sidebar-user" id="sidebarUserProfile" title="Bấm để chỉnh sửa Avatar & Hồ sơ">
+          <div class="user-avatar-wrap">
+            <img id="sidebarAvatarImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar" />
+            <span class="online-dot"></span>
+          </div>
+          <div class="user-meta">
+            <h4 id="sidebarUserName">Quản Trị Viên</h4>
+            <span><i id="sidebarUserRole">Super Admin</i> • Đổi avatar ✎</span>
           </div>
         </div>
 
-        <nav class="side-nav">
-          <button class="nav-item active" type="button" data-admin-panel="home"><span>🏠</span> Home</button>
-          <button class="nav-item" type="button" data-admin-panel="analytics"><span>📊</span> Analytics</button>
-          <button class="nav-item" type="button" data-admin-panel="orders"><span>🧾</span> Orders</button>
-          <button class="nav-item" type="button" data-admin-panel="customers"><span>👥</span> Customers</button>
-          <button class="nav-item" type="button" data-admin-panel="products"><span>📦</span> Products</button>
-          <button class="nav-item" type="button" data-admin-panel="inventory"><span>🧮</span> Inventory</button>
-          <button class="nav-item" type="button" data-admin-panel="promotions"><span>🏷️</span> Promotions</button>
-          <button class="nav-item" type="button" data-admin-panel="staff"><span>🛡️</span> Staff & roles</button>
-          <button class="nav-item" type="button" data-admin-panel="audit"><span>🧭</span> Audit log</button>
-          <button class="nav-item" type="button" data-admin-panel="settings"><span>⚙️</span> Settings</button>
-        </nav>
+        <!-- Navigation Menu (Monochrome Outline SVG Icons theo mẫu chính xác) -->
+        <nav class="sidebar-nav">
+          <!-- 1. Home -->
+          <button class="nav-link-item active" type="button" data-admin-tab="tab-dashboard" onclick="if(!document.getElementById('tab-dashboard')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              <span>Home</span>
+            </div>
+          </button>
 
-        <div class="sidebar-card">
-          <p>Monthly Revenue</p>
-          <strong>$64.2K</strong>
-          <span class="trend up">+12.8%</span>
-        </div>
+          <!-- 2. Analytics -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-suppliers" onclick="if(!document.getElementById('tab-suppliers')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <span>Analytics</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 3. Orders -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-orders" onclick="if(!document.getElementById('tab-orders')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <span>Orders</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 4. Customers -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-customers" onclick="if(!document.getElementById('tab-customers')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
+              <span>Customers</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 5. Products -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-products" onclick="if(!document.getElementById('tab-products')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              <span>Products</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 6. Inventory -->
+          <button class="nav-link-item" type="button" onclick="location.href='inventory.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              <span>Inventory</span>
+            </div>
+          </button>
+
+          <!-- 7. Promotions -->
+          <button class="nav-link-item" type="button" onclick="location.href='promotions.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16l3-1.5 3 1.5 3-1.5 3 1.5 3-1.5 3 1.5V4a2 2 0 0 0-2-2z"></path><line x1="8" y1="7" x2="16" y2="7"></line><line x1="8" y1="11" x2="16" y2="11"></line><line x1="8" y1="15" x2="12" y2="15"></line></svg>
+              <span>Promotions</span>
+            </div>
+          </button>
+
+          <!-- 8. Staff & roles -->
+          <button class="nav-link-item" type="button" onclick="location.href='staff.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Staff &amp; roles</span>
+            </div>
+          </button>
+
+          <!-- 9. Audit log -->
+          <button class="nav-link-item" type="button" onclick="location.href='audit-log.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <span>Audit log</span>
+            </div>
+          </button>
+
+          <!-- 10. Settings -->
+          <button class="nav-link-item" type="button" onclick="location.href='settings.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span>Settings</span>
+            </div>
+          </button>
+
+          <!-- 11. Pages -->
+          <button class="nav-link-item" type="button" onclick="location.href='../index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+              <span>Pages</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 12. Language -->
+          <button class="nav-link-item" type="button" onclick="showToast('Ngôn ngữ hiện tại: Tiếng Việt (VN)', 'info')">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>Language</span>
+            </div>
+          </button>
+
+          <!-- 13. Login / Logout -->
+          <button class="nav-link-item" type="button" id="sidebarLoginBtn">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span id="sidebarLoginText">Logout</span>
+            </div>
+          </button>
+        </nav>
       </aside>
 
-      <main class="dashboard">
-        <header class="topbar">
-          <div class="search-box">
-            <span>⌕</span>
-            <input type="search" placeholder="Search here..." data-admin-action="global-search" />
+      <!-- MAIN CONTENT AREA -->
+      <main class="admin-main">
+        <!-- TOPBAR -->
+        <header class="admin-topbar">
+          <div class="topbar-left">
+            <button class="btn-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Thu gọn sidebar">
+              ☰
+            </button>
+            <div class="topbar-search">
+              <span class="search-icon">⌕</span>
+              <input type="search" name="search_query" placeholder="Search..." />
+            </div>
           </div>
 
-          <div class="topbar-actions">
-            <button class="icon-btn" type="button" aria-label="Alerts" data-admin-action="alerts">🔔<span class="icon-count">4</span></button>
-            <button class="icon-btn" type="button" aria-label="Messages" data-admin-action="messages">✉️<span class="icon-count">2</span></button>
-            <button class="admin-profile admin-profile-button" type="button" data-admin-action="profile">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80" alt="Admin avatar" />
-              <div>
-                <strong>Olivia Rhye</strong>
-                <span>Super Admin</span>
-              </div>
+          <div class="topbar-right">
+            <!-- Nút chỉnh Sáng/Tối -->
+            <button class="theme-switch-btn" id="themeToggleBtn" type="button" title="Chuyển đổi giao diện">
+              <span id="themeIcon">☀️</span>
+              <span id="themeText">Giao diện Sáng</span>
             </button>
+
+            <!-- Notifications & Tasks -->
+            <button class="topbar-icon-btn" type="button" aria-label="Thông báo">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span class="badge-dot"></span>
+            </button>
+
+            <button class="topbar-icon-btn" type="button" aria-label="Tin nhắn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </button>
+
+            <!-- User Avatar in Topbar with Dropdown -->
+            <div class="topbar-user-dropdown">
+              <div class="topbar-user-pill" id="topbarUserPill">
+                <img id="topbarAvatarImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar" />
+              </div>
+
+              <div class="user-dropdown-menu" id="userDropdownMenu">
+                <div class="dropdown-user-header">
+                  <h5 id="dropdownUserName">Quản Trị Viên</h5>
+                  <p id="dropdownUserEmail">admin@minishop.local</p>
+                </div>
+                <button class="dropdown-item-btn" type="button" id="btnOpenAvatarModal">
+                  🎨 Tùy chỉnh Avatar & Tên
+                </button>
+                <button class="dropdown-item-btn logout" type="button" id="btnLogout">
+                  🚪 Đăng xuất hệ thống
+                </button>
+              </div>
+            </div>
           </div>
         </header>
 
-        <section class="overview-grid">
-          <article class="stat-card accent-green">
-            <div class="stat-head">
-              <span>Total Revenue</span>
-              <span class="badge success">+24.2%</span>
-            </div>
-            <h3>$48,250</h3>
-            <small>Compared to last month</small>
-          </article>
-
-          <article class="stat-card accent-blue">
-            <div class="stat-head">
-              <span>Total Views</span>
-              <span class="badge info">+8.4%</span>
-            </div>
-            <h3>214.5K</h3>
-            <small>Across all channels</small>
-          </article>
-
-          <article class="stat-card accent-orange">
-            <div class="stat-head">
-              <span>New Orders</span>
-              <span class="badge warn">+6.1%</span>
-            </div>
-            <h3>1,982</h3>
-            <small>Converted this week</small>
-          </article>
-
-          <article class="stat-card accent-purple">
-            <div class="stat-head">
-              <span>Conversion</span>
-              <span class="badge alert">+12.5%</span>
-            </div>
-            <h3>4.68%</h3>
-            <small>Site-wide improvement</small>
-          </article>
-        </section>
-
-        <section class="content-grid">
-          <div class="panel chart-panel large-panel">
-            <div class="panel-head">
-              <div>
-                <p class="eyebrow dark">Performance</p>
-                <h3>Revenue Overview</h3>
-              </div>
-              <button type="button" class="ghost-btn" data-admin-action="revenue-period">This Month</button>
-            </div>
-            <canvas id="revenueChart" height="180"></canvas>
-          </div>
-
-          <div class="panel chart-panel">
-            <div class="panel-head">
-              <div>
-                <p class="eyebrow dark">Traffic source</p>
-                <h3>Visitors by Browser</h3>
-              </div>
-            </div>
-            <div class="browser-list">
-              <div class="browser-row">
-                <div class="browser-label"><span class="dot blue"></span> Chrome</div>
-                <div class="progress-bar"><span style="width: 78%"></span></div>
-                <strong>78%</strong>
-              </div>
-              <div class="browser-row">
-                <div class="browser-label"><span class="dot green"></span> Safari</div>
-                <div class="progress-bar"><span style="width: 65%"></span></div>
-                <strong>65%</strong>
-              </div>
-              <div class="browser-row">
-                <div class="browser-label"><span class="dot orange"></span> Firefox</div>
-                <div class="progress-bar"><span style="width: 42%"></span></div>
-                <strong>42%</strong>
-              </div>
-              <div class="browser-row">
-                <div class="browser-label"><span class="dot purple"></span> Edge</div>
-                <div class="progress-bar"><span style="width: 35%"></span></div>
-                <strong>35%</strong>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="bottom-grid">
-          <div class="panel chart-panel donut-panel">
-            <div class="panel-head">
-              <div>
-                <p class="eyebrow dark">Summary</p>
-                <h3>Sales Split</h3>
-              </div>
-            </div>
-            <div class="donut-wrap">
-              <canvas id="donutChart" height="180"></canvas>
-            </div>
-            <div class="legend-list">
-              <div><span class="dot blue"></span> Electronics</div>
-              <div><span class="dot green"></span> Appliances</div>
-              <div><span class="dot orange"></span> Accessories</div>
+        <!-- CONTENT BODY -->
+        <div class="admin-content">
+          <div class="page-title-row">
+            <div>
+              <h2 id="currentPageTitle">Bảng điều khiển quản trị</h2>
+              <span class="breadcrumb">AdminPro / Dashboard / Thiết bị công nghệ</span>
             </div>
           </div>
 
-          <div class="panel table-panel">
-            <div class="panel-head">
-              <div>
-                <p class="eyebrow dark">Transactions</p>
-                <h3>Recent Payments Queue</h3>
-              </div>
-              <button type="button" class="ghost-btn" data-admin-action="payments">View all</button>
-            </div>
+          <!-- TAB 1: DASHBOARD (Theo ảnh AdminPro) -->
+          <div class="admin-tab-pane active" id="tab-dashboard">
+            <!-- 4 KPI CARDS (Theo đúng ảnh mẫu của bạn) -->
+            <section class="kpi-row">
+              <article class="kpi-card">
+                <div class="kpi-icon-circle blue">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                </div>
+                <div class="kpi-details">
+                  <span>Total Revenue</span>
+                  <h3>953,000</h3>
+                </div>
+              </article>
 
-            <table>
-              <thead>
-                <tr>
-                  <th>Customer</th>
-                  <th>Amount</th>
-                  <th>Date</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Sam Lee</td>
-                  <td>$1,240</td>
-                  <td>08 Sep</td>
-                  <td><span class="status success">Success</span></td>
-                </tr>
-                <tr>
-                  <td>Jamie Smith</td>
-                  <td>$780</td>
-                  <td>08 Sep</td>
-                  <td><span class="status pending">Pending</span></td>
-                </tr>
-                <tr>
-                  <td>Rachel Green</td>
-                  <td>$540</td>
-                  <td>07 Sep</td>
-                  <td><span class="status canceled">Canceled</span></td>
-                </tr>
-                <tr>
-                  <td>Daniel Kim</td>
-                  <td>$1,860</td>
-                  <td>07 Sep</td>
-                  <td><span class="status success">Success</span></td>
-                </tr>
-                <tr>
-                  <td>Emma Doe</td>
-                  <td>$410</td>
-                  <td>06 Sep</td>
-                  <td><span class="status pending">Pending</span></td>
-                </tr>
-              </tbody>
-            </table>
+              <article class="kpi-card">
+                <div class="kpi-icon-circle teal">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <div class="kpi-details">
+                  <span>Total Income</span>
+                  <h3>236,000</h3>
+                </div>
+              </article>
+
+              <article class="kpi-card">
+                <div class="kpi-icon-circle purple">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                </div>
+                <div class="kpi-details">
+                  <span>Total Orders</span>
+                  <h3>987,563</h3>
+                </div>
+              </article>
+
+              <article class="kpi-card">
+                <div class="kpi-icon-circle amber">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                </div>
+                <div class="kpi-details">
+                  <span>Total Staff</span>
+                  <h3>987,563</h3>
+                </div>
+              </article>
+            </section>
+
+            <!-- 2 BIG CHARTS (Sales Overview Line + Bar) -->
+            <section class="charts-grid-2">
+              <div class="card-box">
+                <div class="card-head">
+                  <h3>Sales Overview</h3>
+                  <select class="date-filter" name="sales_month">
+                    <option>January 2026</option>
+                    <option>February 2026</option>
+                  </select>
+                </div>
+                <div class="chart-wrapper">
+                  <canvas id="salesLineChart"></canvas>
+                </div>
+                <div class="chart-bottom-metrics">
+                  <div><small>Total Sales</small><strong>$10,345</strong></div>
+                  <div><small>This Month</small><strong class="text-primary">$7,589</strong></div>
+                  <div><small>This Week</small><strong class="text-success">$1,476</strong></div>
+                </div>
+              </div>
+
+              <div class="card-box">
+                <div class="card-head">
+                  <h3>Sales Overview (Targets vs Actual)</h3>
+                  <select class="date-filter" name="sales_overview_month">
+                    <option>January 2026</option>
+                  </select>
+                </div>
+                <div class="chart-wrapper">
+                  <canvas id="revenueBarChart"></canvas>
+                </div>
+                <div class="chart-bottom-metrics">
+                  <div><small>Total Sales</small><strong>$10,345</strong></div>
+                  <div><small>This Month</small><strong class="text-primary">$7,589</strong></div>
+                  <div><small>This Week</small><strong class="text-success">$1,476</strong></div>
+                </div>
+              </div>
+            </section>
+
+            <!-- SPLIT SECTION: VISITS & BROWSER STATS -->
+            <section class="split-grid-2">
+              <div class="card-box">
+                <div class="card-head">
+                  <h3>Total Visits</h3>
+                  <span class="date-filter">January 2026</span>
+                </div>
+                <div class="map-placeholder-box">
+                  <div class="map-placeholder-icon">🗺️</div>
+                  <h4 class="map-placeholder-title">Bản đồ truy cập toàn cầu & Việt Nam</h4>
+                  <p class="map-placeholder-desc">TP.HCM: 62% • Hà Nội: 26% • Quốc tế: 12%</p>
+                </div>
+              </div>
+
+              <div class="card-box">
+                <div class="card-head">
+                  <h3>Browser Stats</h3>
+                </div>
+                <table class="browser-table">
+                  <tbody>
+                    <tr>
+                      <td><strong>Google Chrome</strong></td>
+                      <td class="progress-cell"><div class="progress-bar-wrap"><div class="progress-bar-fill w-58 bg-primary"></div></div></td>
+                      <td class="text-right"><strong>58%</strong></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Mozilla Firefox</strong></td>
+                      <td class="progress-cell"><div class="progress-bar-wrap"><div class="progress-bar-fill w-22 bg-warning"></div></div></td>
+                      <td class="text-right"><strong>22%</strong></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Apple Safari</strong></td>
+                      <td class="progress-cell"><div class="progress-bar-wrap"><div class="progress-bar-fill w-14 bg-success"></div></div></td>
+                      <td class="text-right"><strong>14%</strong></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Microsoft Edge</strong></td>
+                      <td class="progress-cell"><div class="progress-bar-wrap"><div class="progress-bar-fill w-6 bg-purple"></div></div></td>
+                      <td class="text-right"><strong>6%</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
           </div>
-        </section>
+
+          <!-- TAB 2: QUẢN LÝ SẢN PHẨM (PRODUCTS) -->
+          <div class="admin-tab-pane" id="tab-products">
+            <div class="card-box">
+              <div class="card-head">
+                <h3>Danh sách Sản Phẩm (Products)</h3>
+                <button class="btn-admin-primary" id="btnOpenAddProduct" type="button">
+                  + Thêm Sản Phẩm Mới (Có Upload Ảnh)
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="admin-data-table" id="productsTable">
+                  <thead>
+                    <tr>
+                      <th>Mã SKU</th>
+                      <th>Tên Sản Phẩm</th>
+                      <th>Danh Mục</th>
+                      <th>Giá Bán</th>
+                      <th>Tồn Kho</th>
+                      <th>Trạng Thái</th>
+                      <th>Hành Động</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong class="text-primary">#IP15PM-256</strong></td>
+                      <td><strong>iPhone 15 Pro Max 256GB</strong></td>
+                      <td>Điện thoại</td>
+                      <td><strong>28.990.000₫</strong></td>
+                      <td><span class="badge-status success">15 cái</span></td>
+                      <td><span class="badge-status info">Đang bán</span></td>
+                      <td>
+                        <button class="btn-sm-action">Sửa</button>
+                        <button class="btn-sm-action delete" onclick="this.closest('tr').remove()">Xóa</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong class="text-primary">#ROG-ZEPH-G16</strong></td>
+                      <td><strong>Laptop ASUS ROG Zephyrus G16</strong></td>
+                      <td>Laptop</td>
+                      <td><strong>31.990.000₫</strong></td>
+                      <td><span class="badge-status warning">8 cái (Sắp hết)</span></td>
+                      <td><span class="badge-status info">Đang bán</span></td>
+                      <td>
+                        <button class="btn-sm-action">Sửa</button>
+                        <button class="btn-sm-action delete" onclick="this.closest('tr').remove()">Xóa</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong class="text-primary">#WH-1000XM5</strong></td>
+                      <td><strong>Tai nghe chống ồn Sony WH-1000XM5</strong></td>
+                      <td>Âm thanh</td>
+                      <td><strong>6.490.000₫</strong></td>
+                      <td><span class="badge-status success">20 cái</span></td>
+                      <td><span class="badge-status info">Đang bán</span></td>
+                      <td>
+                        <button class="btn-sm-action">Sửa</button>
+                        <button class="btn-sm-action delete" onclick="this.closest('tr').remove()">Xóa</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong class="text-primary">#MX-MASTER-3S</strong></td>
+                      <td><strong>Chuột không dây Logitech MX Master 3S</strong></td>
+                      <td>Phụ kiện</td>
+                      <td><strong>2.190.000₫</strong></td>
+                      <td><span class="badge-status success">35 cái</span></td>
+                      <td><span class="badge-status info">Đang bán</span></td>
+                      <td>
+                        <button class="btn-sm-action">Sửa</button>
+                        <button class="btn-sm-action delete" onclick="this.closest('tr').remove()">Xóa</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: ĐƠN HÀNG (ORDERS) -->
+          <div class="admin-tab-pane" id="tab-orders">
+            <div class="card-box">
+              <div class="card-head">
+                <h3>Quản Lý Đơn Hàng & Duyệt Đơn (Orders)</h3>
+                <span class="date-filter">Bộ lọc: Mới nhất</span>
+              </div>
+
+              <div class="table-responsive">
+                <table class="admin-data-table">
+                  <thead>
+                    <tr>
+                      <th>Mã Đơn</th>
+                      <th>Khách Hàng</th>
+                      <th>Điện Thoại</th>
+                      <th>Tổng Tiền</th>
+                      <th>Thanh Toán</th>
+                      <th>Trạng Thái</th>
+                      <th>Thao Tác</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong class="text-primary">ORD-20260920-891</strong></td>
+                      <td>Nguyễn Văn An</td>
+                      <td>0901234567</td>
+                      <td><strong class="text-danger">66.470.000₫</strong></td>
+                      <td><span class="badge-status info">COD</span></td>
+                      <td><span class="badge-status pending" id="status1">Chờ duyệt</span></td>
+                      <td>
+                        <button class="btn-sm-action btn-action-approve" onclick="document.getElementById('status1').textContent='Đã duyệt & Xuất kho'; document.getElementById('status1').className='badge-status success'; showToast('Đã duyệt đơn và xuất kho thành công!', 'success')">✓ Duyệt Đơn</button>
+                        <button class="btn-sm-action delete" onclick="document.getElementById('status1').textContent='Đã hủy'; document.getElementById('status1').className='badge-status warning';">✕ Hủy</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong class="text-primary">ORD-20260910-002</strong></td>
+                      <td>Trần Minh Hoàng</td>
+                      <td>0918765432</td>
+                      <td><strong class="text-danger">8.680.000₫</strong></td>
+                      <td><span class="badge-status success">Banking</span></td>
+                      <td><span class="badge-status success">Đang giao</span></td>
+                      <td>
+                        <button class="btn-sm-action">Chi tiết</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 4: BIẾN ĐỘNG KHO (HISTORY / STOCK MOVEMENTS) -->
+          <div class="admin-tab-pane" id="tab-inventory">
+            <div class="card-box">
+              <div class="card-head">
+                <h3>Biến Động Tồn Kho (Stock Movements)</h3>
+                <button class="btn-admin-primary" id="btnOpenAddStock" type="button">
+                  + Tạo Phiếu Nhập Kho Từ NCC
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="admin-data-table" id="stockMovementsTable">
+                  <thead>
+                    <tr>
+                      <th>Mã Phiếu</th>
+                      <th>Thiết Bị IT</th>
+                      <th>Nhà Cung Cấp</th>
+                      <th>Biến Động</th>
+                      <th>Thời Gian</th>
+                      <th>Thực Hiện</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong class="text-primary">PN-20260825-01</strong></td>
+                      <td><strong>iPhone 15 Pro Max 256GB</strong></td>
+                      <td>FPT Synnex</td>
+                      <td><span class="badge-status success">Nhập hàng (+16)</span></td>
+                      <td>25/08/2026</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr>
+                      <td><strong class="text-primary">PN-20260825-02</strong></td>
+                      <td><strong>Laptop ASUS ROG Zephyrus</strong></td>
+                      <td>Digiworld</td>
+                      <td><span class="badge-status success">Nhập hàng (+8)</span></td>
+                      <td>25/08/2026</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr>
+                      <td><strong class="text-primary">ORD-20260901-001</strong></td>
+                      <td><strong>iPhone 15 Pro Max 256GB</strong></td>
+                      <td>--</td>
+                      <td><span class="badge-status warning">Xuất bán (-1)</span></td>
+                      <td>01/09/2026</td>
+                      <td>Hệ thống</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 5: NHÀ CUNG CẤP (VENDORS / SUPPLIERS) -->
+          <div class="admin-tab-pane" id="tab-suppliers">
+            <div class="card-box">
+              <div class="card-head">
+                <h3>Danh sách Nhà Cung Cấp Thiết Bị (Vendors)</h3>
+              </div>
+              <table class="admin-data-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Tên Nhà Cung Cấp</th>
+                    <th>Đại Diện</th>
+                    <th>Hotline</th>
+                    <th>Địa Chỉ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td><strong>FPT Synnex Phân Phối</strong></td>
+                    <td>Nguyễn Văn Long</td>
+                    <td>02873001010</td>
+                    <td>Quận 7, TP.HCM</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td><strong>Digiworld Corporation (DGW)</strong></td>
+                    <td>Trần Thị Mai</td>
+                    <td>02839290059</td>
+                    <td>Quận 3, TP.HCM</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td><strong>Dầu Khí PSD</strong></td>
+                    <td>Lê Hoàng Nam</td>
+                    <td>02839115577</td>
+                    <td>Quận 1, TP.HCM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 6: KHÁCH HÀNG (CUSTOMERS) -->
+          <div class="admin-tab-pane" id="tab-customers">
+            <div class="card-box">
+              <div class="card-head">
+                <h3>Tài Khoản Khách Hàng (Customers)</h3>
+              </div>
+              <table class="admin-data-table">
+                <thead>
+                  <tr>
+                    <th>Họ và Tên</th>
+                    <th>Email</th>
+                    <th>Điện Thoại</th>
+                    <th>Địa Chỉ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Nguyễn Văn An</strong></td>
+                    <td>nguyenan@gmail.com</td>
+                    <td>0901234567</td>
+                    <td>Số 123 Lê Lợi, Q.1, TP.HCM</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Trần Minh Hoàng</strong></td>
+                    <td>hoangtran@gmail.com</td>
+                    <td>0918765432</td>
+                    <td>Số 45 Quang Trung, Gò Vấp, TP.HCM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Semantic Footer -->
+        <footer class="admin-footer">
+          <p>© 2026 YuwaShop AdminPro - Hệ thống quản lý bán hàng.</p>
+        </footer>
       </main>
     </div>
 
-    <div class="admin-side-overlay" data-admin-panel-close></div>
-    <aside class="admin-side-panel" aria-label="Admin workspace" aria-hidden="true">
-      <div class="admin-side-head">
-        <div><p class="eyebrow dark" id="sidePanelEyebrow">Workspace</p><h2 id="sidePanelTitle">Workspace</h2></div>
-        <button class="admin-side-close" type="button" data-admin-panel-close aria-label="Close panel">×</button>
-      </div>
-      <div class="admin-side-body" id="sidePanelBody"></div>
-    </aside>
+    <!-- MODAL 1: THIẾT KẾ & TÙY CHỈNH AVATAR QUẢN TRỊ VIÊN -->
+    <div class="admin-modal-overlay" id="avatarCustomizeModal">
+      <div class="admin-modal-box">
+        <div class="admin-modal-head">
+          <h3>Thiết Kế & Tùy Chỉnh Avatar Quản Trị</h3>
+          <button class="admin-modal-close" id="btnCloseAvatarModal" type="button">×</button>
+        </div>
 
-    <script src="assets/js/admin-data-service.js"></script>
-    <script src="assets/js/admin.js"></script>
+        <form id="formCustomizeAvatar">
+          <div class="avatar-customize-wrap">
+            <div class="avatar-large-preview">
+              <img id="avatarPreviewCurrent" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Preview Avatar" />
+            </div>
+            <p class="fs-sm text-muted">Ảnh hiển thị hiện tại trên toàn hệ thống</p>
+          </div>
+
+          <!-- Cách 1: Tải ảnh từ máy tính -->
+          <div class="admin-form-group">
+            <label>1. Tải ảnh Avatar mới từ máy tính của bạn:</label>
+            <div class="file-upload-box" onclick="document.getElementById('avatarCustomFileInput').click()">
+              <input type="file" id="avatarCustomFileInput" name="avatar_file" accept="image/*" />
+              <p class="file-upload-label" id="avatarUploadLabel">
+                📁 Bấm vào đây để <strong>chọn ảnh cá nhân từ máy tính</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- Cách 2: Chọn từ bộ sưu tập Avatar chuyên nghiệp -->
+          <div class="admin-form-group">
+            <span class="avatar-presets-label">2. Hoặc chọn nhanh từ bộ sưu tập Avatar Doanh nhân:</span>
+            <div class="avatar-presets-grid">
+              <button type="button" class="avatar-preset-btn" data-avatar-url="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="p1" />
+              </button>
+              <button type="button" class="avatar-preset-btn" data-avatar-url="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="p2" />
+              </button>
+              <button type="button" class="avatar-preset-btn" data-avatar-url="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="p3" />
+              </button>
+              <button type="button" class="avatar-preset-btn" data-avatar-url="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="p4" />
+              </button>
+              <button type="button" class="avatar-preset-btn" data-avatar-url="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="p5" />
+              </button>
+            </div>
+          </div>
+
+          <!-- Tên hiển thị & Chức vụ -->
+          <div class="form-grid-2">
+            <div class="admin-form-group">
+              <label for="customAdminName">Họ và tên hiển thị</label>
+              <input type="text" id="customAdminName" name="admin_name" value="Quản Trị Viên" required />
+            </div>
+            <div class="admin-form-group">
+              <label for="customAdminRole">Chức vụ hiển thị</label>
+              <input type="text" id="customAdminRole" name="admin_role" value="Super Admin" required />
+            </div>
+          </div>
+
+          <div class="modal-btn-row">
+            <button class="btn-sm-action" type="button" onclick="document.getElementById('avatarCustomizeModal').classList.remove('active')">Hủy</button>
+            <button class="btn-admin-primary" type="submit">💾 Lưu Avatar & Hồ Sơ</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL 2: THÊM SẢN PHẨM MỚI (CÓ UPLOAD ẢNH MINH HỌA) -->
+    <div class="admin-modal-overlay" id="addProductModal">
+      <div class="admin-modal-box">
+        <div class="admin-modal-head">
+          <h3>Thêm Mới Sản Phẩm Công Nghệ</h3>
+          <button class="admin-modal-close" id="btnCloseProductModal" type="button">×</button>
+        </div>
+
+        <form id="formAddProduct">
+          <div class="form-grid-2">
+            <div class="admin-form-group">
+              <label for="newProdName">Tên sản phẩm *</label>
+              <input type="text" id="newProdName" name="product_name" placeholder="VD: MacBook Pro M3" required />
+            </div>
+            <div class="admin-form-group">
+              <label for="newProdCat">Danh mục *</label>
+              <select id="newProdCat" name="category" required>
+                <option value="Laptop">Laptop & Máy tính</option>
+                <option value="Điện thoại">Điện thoại thông minh</option>
+                <option value="Âm thanh">Thiết bị âm thanh</option>
+                <option value="Phụ kiện">Phụ kiện công nghệ</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="admin-form-group">
+              <label for="newProdPrice">Giá bán (VNĐ) *</label>
+              <input type="number" id="newProdPrice" name="price" placeholder="VD: 32000000" required />
+            </div>
+            <div class="admin-form-group">
+              <label for="newProdStock">Số lượng tồn kho *</label>
+              <input type="number" id="newProdStock" name="stock" placeholder="VD: 10" required />
+            </div>
+          </div>
+
+          <!-- Yêu cầu bắt buộc: Upload ảnh sản phẩm -->
+          <div class="admin-form-group">
+            <label>Hình ảnh minh họa sản phẩm (Bắt buộc) *</label>
+            <div class="file-upload-box" onclick="document.getElementById('productImageFile').click()">
+              <input type="file" id="productImageFile" name="product_image" accept="image/*" />
+              <p class="file-upload-label" id="fileUploadText">
+                📁 Kéo thả ảnh vào đây hoặc <strong>Bấm để chọn file ảnh từ máy tính</strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="newProdSpecs">Thông số kỹ thuật</label>
+            <textarea id="newProdSpecs" name="specifications" rows="3" placeholder="VD: Chip M3 8-core, RAM 16GB, SSD 512GB"></textarea>
+          </div>
+
+          <div class="modal-btn-row">
+            <button class="btn-sm-action" type="button" onclick="document.getElementById('addProductModal').classList.remove('active')">Hủy</button>
+            <button class="btn-admin-primary" type="submit">💾 Lưu Sản Phẩm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL 3: TẠO PHIẾU NHẬP KHO -->
+    <div class="admin-modal-overlay" id="addStockModal">
+      <div class="admin-modal-box">
+        <div class="admin-modal-head">
+          <h3>Tạo Phiếu Nhập Kho Từ Nhà Cung Cấp</h3>
+          <button class="admin-modal-close" id="btnCloseStockModal" type="button">×</button>
+        </div>
+
+        <form id="formAddStock">
+          <div class="admin-form-group">
+            <label for="stockSupplier">Nhà cung cấp đối tác *</label>
+            <select id="stockSupplier" name="supplier" required>
+              <option value="FPT Synnex Phân Phối">FPT Synnex Phân Phối</option>
+              <option value="Digiworld Corporation">Digiworld Corporation (DGW)</option>
+              <option value="Dầu Khí PSD">Dầu Khí PSD</option>
+            </select>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="admin-form-group">
+              <label for="stockProduct">Sản phẩm nhập *</label>
+              <select id="stockProduct" name="product" required>
+                <option value="iPhone 15 Pro Max 256GB">iPhone 15 Pro Max 256GB</option>
+                <option value="Laptop ASUS ROG Zephyrus G16">Laptop ASUS ROG Zephyrus G16</option>
+                <option value="Tai nghe Sony WH-1000XM5">Tai nghe Sony WH-1000XM5</option>
+                <option value="Chuột Logitech MX Master 3S">Chuột Logitech MX Master 3S</option>
+              </select>
+            </div>
+            <div class="admin-form-group">
+              <label for="stockQty">Số lượng nhập *</label>
+              <input type="number" id="stockQty" name="quantity" min="1" placeholder="VD: 50" required />
+            </div>
+          </div>
+
+          <div class="modal-btn-row">
+            <button class="btn-sm-action" type="button" onclick="document.getElementById('addStockModal').classList.remove('active')">Hủy</button>
+            <button class="btn-admin-primary btn-success-bg" type="submit">📥 Xác Nhận Nhập Kho</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Floating Gear (Đổi Theme Sáng / Tối) -->
+    <button class="floating-theme-gear" id="floatingGear" type="button" title="Chuyển đổi giao diện Sáng / Tối">
+      ⚙️
+    </button>
+
+    <script src="assets/js/adminpro.js"></script>
+    <script src="assets/js/toast.js"></script>
   </body>
 </html>

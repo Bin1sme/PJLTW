@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promotions | AdminPro YuwaShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/adminpro.css" />
+
+  </head>
+  <body>
+    <div class="admin-wrapper">
+      <!-- SIDEBAR -->
+      <aside class="admin-sidebar">
+        <!-- Brand Logo -->
+        <div class="sidebar-brand">
+          <div class="brand-icon-pro">Q</div>
+          <div class="brand-text-pro">Admin<span>Pro</span></div>
+        </div>
+
+        <!-- Sidebar User Profile -->
+        <div class="sidebar-user" id="sidebarUserProfile" title="Bấm để chỉnh sửa Avatar &amp; Hồ sơ">
+          <div class="user-avatar-wrap">
+            <img id="sidebarAvatarImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar" />
+            <span class="online-dot"></span>
+          </div>
+          <div class="user-meta">
+            <h4 id="sidebarUserName">Quản Trị Viên</h4>
+            <span><i id="sidebarUserRole">Super Admin</i> • Đổi avatar ✎</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <!-- 1. Home -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-dashboard" onclick="if(!document.getElementById('tab-dashboard')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              <span>Home</span>
+            </div>
+          </button>
+
+          <!-- 2. Analytics -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-suppliers" onclick="if(!document.getElementById('tab-suppliers')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <span>Analytics</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 3. Orders -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-orders" onclick="if(!document.getElementById('tab-orders')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <span>Orders</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 4. Customers -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-customers" onclick="if(!document.getElementById('tab-customers')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
+              <span>Customers</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 5. Products -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-products" onclick="if(!document.getElementById('tab-products')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              <span>Products</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 6. Inventory -->
+          <button class="nav-link-item" type="button" onclick="location.href='inventory.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              <span>Inventory</span>
+            </div>
+          </button>
+
+          <!-- 7. Promotions (ACTIVE) -->
+          <button class="nav-link-item active" type="button">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16l3-1.5 3 1.5 3-1.5 3 1.5 3-1.5 3 1.5V4a2 2 0 0 0-2-2z"></path><line x1="8" y1="7" x2="16" y2="7"></line><line x1="8" y1="11" x2="16" y2="11"></line><line x1="8" y1="15" x2="12" y2="15"></line></svg>
+              <span>Promotions</span>
+            </div>
+          </button>
+
+          <!-- 8. Staff & roles -->
+          <button class="nav-link-item" type="button" onclick="location.href='staff.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Staff &amp; roles</span>
+            </div>
+          </button>
+
+          <!-- 9. Audit log -->
+          <button class="nav-link-item" type="button" onclick="location.href='audit-log.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <span>Audit log</span>
+            </div>
+          </button>
+
+          <!-- 10. Settings -->
+          <button class="nav-link-item" type="button" onclick="location.href='settings.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span>Settings</span>
+            </div>
+          </button>
+
+          <!-- 11. Pages -->
+          <button class="nav-link-item" type="button" onclick="location.href='../index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+              <span>Pages</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 12. Language -->
+          <button class="nav-link-item" type="button" onclick="showToast('Ngôn ngữ hiện tại: Tiếng Việt (VN)', 'info')">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>Language</span>
+            </div>
+          </button>
+
+          <!-- 13. Login / Logout -->
+          <button class="nav-link-item" type="button" id="sidebarLoginBtn">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span id="sidebarLoginText">Logout</span>
+            </div>
+          </button>
+        </nav>
+      </aside>
+
+
+      <!-- MAIN -->
+      <main class="admin-main">
+        <header class="admin-topbar">
+          <div class="topbar-left">
+            <button class="btn-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Thu gọn sidebar">☰</button>
+            <div class="topbar-search">
+              <span class="search-icon">⌕</span>
+              <input type="search" name="search_query" placeholder="Tìm mã khuyến mãi..." />
+            </div>
+          </div>
+
+          <div class="topbar-right">
+            <button class="theme-switch-btn" id="themeToggleBtn" type="button" title="Chuyển đổi giao diện">
+              <span id="themeIcon">☀️</span>
+              <span id="themeText">Giao diện Sáng</span>
+            </button>
+
+            <button class="topbar-icon-btn" type="button" aria-label="Thông báo">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span class="badge-dot"></span>
+            </button>
+
+            <button class="topbar-icon-btn" type="button" aria-label="Tin nhắn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </button>
+
+            <div class="topbar-user-dropdown">
+              <div class="topbar-user-pill" id="topbarUserPill">
+                <img id="topbarAvatarImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar" />
+              </div>
+
+              <div class="user-dropdown-menu" id="userDropdownMenu">
+                <div class="dropdown-user-header">
+                  <h5 id="dropdownUserName">Quản Trị Viên</h5>
+                  <p id="dropdownUserEmail">admin@minishop.local</p>
+                </div>
+                <button class="dropdown-item-btn" type="button" id="btnOpenAvatarModal">
+                  🎨 Tùy chỉnh Avatar &amp; Tên
+                </button>
+                <button class="dropdown-item-btn logout" type="button" id="btnLogout">
+                  🚪 Đăng xuất hệ thống
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+
+        <div class="admin-content">
+          <div class="breadcrumb"><a href="index.html">Home</a><span>›</span> Promotions</div>
+          <div class="page-header">
+            <div>
+              <div class="page-title">Quản lý Khuyến mãi</div>
+              <div class="page-subtitle">Tạo và quản lý mã giảm giá, chương trình flash sale</div>
+            </div>
+            <button class="btn-primary" id="btnTaoMa">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Tạo mã mới
+            </button>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="kpi-card"><div class="kpi-icon purple"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V22H4V12"></path><path d="M22 7H2v5h20V7z"></path><path d="M12 22V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg></div><div class="kpi-label">Tổng mã giảm giá</div><div class="kpi-value">84</div><span class="kpi-badge up">Đang có</span></div>
+            <div class="kpi-card"><div class="kpi-icon green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="kpi-label">Đang hoạt động</div><div class="kpi-value">23</div><span class="kpi-badge up">Còn hiệu lực</span></div>
+            <div class="kpi-card"><div class="kpi-icon blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div><div class="kpi-label">Lượt sử dụng</div><div class="kpi-value">1,439</div><span class="kpi-badge up">+18% tháng này</span></div>
+            <div class="kpi-card"><div class="kpi-icon red"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div class="kpi-label">Đã hết hạn</div><div class="kpi-value">61</div><span class="kpi-badge gray">Đã kết thúc</span></div>
+          </div>
+
+          <div class="table-toolbar">
+            <div class="toolbar-left">
+              <div class="search-input-wrap">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="search" name="promo_search" placeholder="Tìm mã voucher..." />
+              </div>
+              <select class="select-filter" name="filter_type"><option>Tất cả loại</option><option>Giảm %</option><option>Giảm tiền cố định</option><option>Miễn phí vận chuyển</option></select>
+              <select class="select-filter" name="filter_status"><option>Tất cả trạng thái</option><option>Đang hoạt động</option><option>Hết hạn</option><option>Tạm dừng</option></select>
+            </div>
+          </div>
+
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" name="select_all" /></th>
+                  <th>Mã voucher</th>
+                  <th>Loại giảm</th>
+                  <th>Giá trị</th>
+                  <th>Điều kiện tối thiểu</th>
+                  <th>Hạn dùng</th>
+                  <th>Đã dùng / Giới hạn</th>
+                  <th>Trạng thái</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" name="select_promo" /></td>
+                  <td><span class="code-chip">SALE10</span></td>
+                  <td>Giảm %</td>
+                  <td class="text-danger font-bold">10%</td>
+                  <td>500,000 ₫</td>
+                  <td>31/12/2026</td>
+                  <td>248 / 500</td>
+                  <td><span class="badge badge-success">Hoạt động</span></td>
+                  <td><div class="action-btns"><button class="action-btn">Sửa</button><button class="action-btn danger">Tạm dừng</button></div></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" name="select_promo" /></td>
+                  <td><span class="code-chip">FREESHIP</span></td>
+                  <td>Miễn ship</td>
+                  <td class="text-danger font-bold">0 ₫ ship</td>
+                  <td>300,000 ₫</td>
+                  <td>15/10/2026</td>
+                  <td>892 / 1000</td>
+                  <td><span class="badge badge-success">Hoạt động</span></td>
+                  <td><div class="action-btns"><button class="action-btn">Sửa</button><button class="action-btn danger">Tạm dừng</button></div></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" name="select_promo" /></td>
+                  <td><span class="code-chip">FLASH200K</span></td>
+                  <td>Giảm tiền</td>
+                  <td class="text-danger font-bold">200,000 ₫</td>
+                  <td>2,000,000 ₫</td>
+                  <td>05/10/2026</td>
+                  <td>150 / 150</td>
+                  <td><span class="badge badge-warning">Đã hết lượt</span></td>
+                  <td><div class="action-btns"><button class="action-btn">Gia hạn</button><button class="action-btn danger">Xóa</button></div></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" name="select_promo" /></td>
+                  <td><span class="code-chip">NEWMEMBER</span></td>
+                  <td>Giảm %</td>
+                  <td class="text-danger font-bold">15%</td>
+                  <td>0 ₫ (Không giới hạn)</td>
+                  <td>31/12/2026</td>
+                  <td>56 / ∞</td>
+                  <td><span class="badge badge-success">Hoạt động</span></td>
+                  <td><div class="action-btns"><button class="action-btn">Sửa</button><button class="action-btn danger">Tạm dừng</button></div></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" name="select_promo" /></td>
+                  <td><span class="code-chip">SUMMER23</span></td>
+                  <td>Giảm %</td>
+                  <td class="text-muted font-bold">20%</td>
+                  <td>1,000,000 ₫</td>
+                  <td>31/08/2023</td>
+                  <td>1,200 / 1,000</td>
+                  <td><span class="badge badge-danger">Hết hạn</span></td>
+                  <td><div class="action-btns"><button class="action-btn">Xem</button><button class="action-btn danger">Xóa</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pagination-row">
+              <span>Hiển thị 1–5 / 84 mã khuyến mãi</span>
+              <div class="pagination-btns">
+                <button class="pg-btn">‹</button>
+                <button class="pg-btn active">1</button>
+                <button class="pg-btn">2</button>
+                <button class="pg-btn">3</button>
+                <button class="pg-btn">›</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Semantic Footer -->
+        <footer class="admin-footer">
+          <p>© 2026 YuwaShop AdminPro - Hệ thống quản lý bán hàng.</p>
+        </footer>
+      </main>
+    </div>
+
+    <!-- Modal Tạo mã -->
+    <div class="modal-overlay" id="modalTaoMa">
+      <div class="modal-box">
+        <div class="modal-title">🎟️ Tạo mã khuyến mãi mới</div>
+        <div class="form-grid2">
+          <div class="form-row">
+            <label class="form-label">Mã voucher <span class="required-star">*</span></label>
+            <input class="form-input text-uppercase" type="text" name="promo_code" placeholder="VD: SALE10, FLASH50K..." data-required data-label="Mã voucher" />
+            <div class="field-error"></div>
+          </div>
+          <div class="form-row">
+            <label class="form-label">Loại giảm giá</label>
+            <select class="form-input" name="promo_discount_type"><option>Giảm theo %</option><option>Giảm tiền cố định</option><option>Miễn phí vận chuyển</option></select>
+            <div class="field-error"></div>
+          </div>
+        </div>
+        <div class="form-grid3">
+          <div class="form-row">
+            <label class="form-label">Giá trị giảm <span class="required-star">*</span></label>
+            <input class="form-input" type="number" name="promo_discount_value" placeholder="10" data-required data-label="Giá trị giảm" />
+            <div class="field-error"></div>
+          </div>
+          <div class="form-row">
+            <label class="form-label">Đơn tối thiểu (₫) <span class="required-star">*</span></label>
+            <input class="form-input" type="number" name="promo_min_order" placeholder="500000" data-required data-label="Đơn tối thiểu" />
+            <div class="field-error"></div>
+          </div>
+          <div class="form-row">
+            <label class="form-label">Giới hạn sử dụng <span class="required-star">*</span></label>
+            <input class="form-input" type="number" name="promo_usage_limit" placeholder="100" data-required data-label="Giới hạn sử dụng" />
+            <div class="field-error"></div>
+          </div>
+        </div>
+        <div class="form-grid2">
+          <div class="form-row">
+            <label class="form-label">Ngày bắt đầu <span class="required-star">*</span></label>
+            <input class="form-input" type="date" name="promo_start_date" data-required data-label="Ngày bắt đầu" />
+            <div class="field-error"></div>
+          </div>
+          <div class="form-row">
+            <label class="form-label">Ngày kết thúc <span class="required-star">*</span></label>
+            <input class="form-input" type="date" name="promo_end_date" data-required data-label="Ngày kết thúc" />
+            <div class="field-error"></div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Mô tả</label>
+          <input class="form-input" type="text" name="promo_description" placeholder="Mô tả ngắn về mã khuyến mãi (không bắt buộc)..." />
+          <div class="field-error"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-outline" onclick="document.getElementById('modalTaoMa').classList.remove('show')">Hủy</button>
+          <button class="btn-primary" id="btnConfirmTaoMa">Tạo mã</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/adminpro.js"></script>
+    <script src="assets/js/toast.js"></script>
+    <script>
+      // Mở modal tạo mã
+      document.getElementById('btnTaoMa')?.addEventListener('click', () => document.getElementById('modalTaoMa').classList.add('show'));
+      document.getElementById('modalTaoMa')?.addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.classList.remove('show'); });
+
+      // Confirm tạo mã → validate trước khi hiện success modal
+      document.getElementById('btnConfirmTaoMa')?.addEventListener('click', () => {
+        const modalBox = document.querySelector('#modalTaoMa .modal-box');
+        if (!validateForm(modalBox)) return;
+
+        document.getElementById('modalTaoMa').classList.remove('show');
+        showSuccessModal('Tạo mã thành công!', 'Mã khuyến mãi đã được kích hoạt và sẵn sàng sử dụng.');
+
+        // Reset form
+        modalBox.querySelectorAll('.form-input').forEach(el => {
+          if (el.tagName !== 'SELECT') el.value = '';
+          el.classList.remove('is-valid', 'is-invalid');
+        });
+        modalBox.querySelectorAll('.field-error').forEach(err => err.textContent = '');
+      });
+
+      // Nút thao tác trong bảng
+      document.querySelectorAll('.action-btn').forEach(btn => {
+        const txt = btn.textContent.trim();
+        btn.removeAttribute('onclick');
+        btn.addEventListener('click', () => {
+          if (txt === 'Sửa') showToast('Đang mở form chỉnh sửa mã...', 'info');
+          else if (txt === 'Tạm dừng') showConfirm({ title: 'Tạm dừng mã?', message: 'Mã giảm giá sẽ không thể sử dụng cho đến khi bật lại.', confirmText: 'Tạm dừng', type: 'warning', onConfirm: () => showToast('Đã tạm dừng mã giảm giá.', 'warning') });
+          else if (txt === 'Gia hạn') showToast('Đã gia hạn mã thêm 30 ngày.', 'success');
+          else if (txt === 'Xóa') showConfirm({ title: 'Xóa mã vĩnh viễn?', message: 'Hành động này không thể hoàn tác.', confirmText: 'Xóa', type: 'danger', onConfirm: () => showToast('Đã xóa mã khuyến mãi.', 'error') });
+          else if (txt === 'Xem') showToast('Đang tải chi tiết mã...', 'info');
+        });
+      });
+    </script>
+  </body>
+</html>

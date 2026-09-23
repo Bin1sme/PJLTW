@@ -52,6 +52,8 @@ img {
 }
 
 .sidebar {
+  position: relative;
+  z-index: 70;
   background: rgba(11, 18, 32, 0.92);
   border-right: 1px solid var(--line);
   padding: 22px 18px;
@@ -117,7 +119,7 @@ img {
 .admin-side-overlay {
   position: fixed;
   inset: 0;
-  z-index: 90;
+  z-index: 40;
   background: rgba(3, 8, 18, 0.58);
   opacity: 0;
   visibility: hidden;
@@ -129,7 +131,7 @@ img {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 100;
+  z-index: 60;
   width: min(450px, 100%);
   height: 100vh;
   overflow-y: auto;
@@ -169,105 +171,11 @@ body.admin-panel-open .admin-side-overlay {
   width: 40px;
   height: 40px;
   border: 1px solid var(--line);
-
-.admin-profile-button {
-  color: var(--text);
-  text-align: left;
-  cursor: pointer;
-}
   border-radius: 12px;
   background: rgba(148, 163, 184, 0.08);
   color: var(--text);
   font-size: 1.7rem;
   line-height: 1;
-}
-
-.side-secondary {
-  width: 100%;
-  min-height: 42px;
-  margin-top: 10px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: transparent;
-  color: var(--text-soft);
-  font-weight: 700;
-}
-
-.profile-side-card {
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: linear-gradient(140deg, rgba(78, 168, 255, 0.14), rgba(39, 199, 111, 0.08));
-  text-align: center;
-}
-
-.profile-side-card img {
-  width: 78px;
-  height: 78px;
-  margin: 0 auto 12px;
-  border-radius: 22px;
-  object-fit: cover;
-}
-
-.profile-side-card h3,
-.profile-side-card p,
-.profile-side-card span {
-  margin: 0;
-}
-
-.profile-side-card p,
-.profile-side-card span {
-  display: block;
-  margin-top: 5px;
-  color: var(--text-soft);
-  font-size: 0.78rem;
-}
-
-.side-date-field {
-  display: grid;
-  gap: 7px;
-  margin-top: 14px;
-  color: var(--text-soft);
-  font-size: 0.78rem;
-}
-
-.side-date-field input {
-  min-height: 40px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  background: rgba(148, 163, 184, 0.08);
-  color: var(--text);
-  padding: 0 10px;
-}
-
-.side-search-results {
-  display: grid;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.side-search-results p {
-  color: var(--text-soft);
-  font-size: 0.8rem;
-}
-
-.search-result {
-  display: grid;
-  gap: 4px;
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: rgba(148, 163, 184, 0.06);
-}
-
-.search-result span {
-  color: var(--blue);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-}
-
-.search-result strong {
-  font-size: 0.82rem;
 }
 
 .admin-side-body {
@@ -561,7 +469,6 @@ body.admin-panel-open .admin-side-overlay {
 }
 
 .search-box {
-  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -571,85 +478,6 @@ body.admin-panel-open .admin-side-overlay {
   border-radius: 14px;
   border: 1px solid var(--line);
   background: rgba(16, 27, 45, 0.75);
-}
-
-.admin-search-popover {
-  position: absolute;
-  top: 82px;
-  left: 24px;
-  z-index: 110;
-  width: min(420px, calc(100% - 48px));
-  padding: 14px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: #101b2d;
-  box-shadow: var(--shadow);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-6px);
-  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
-}
-
-.admin-search-popover.open {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.admin-search-popover-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: var(--text-soft);
-  font-size: 0.78rem;
-}
-
-.admin-search-close {
-  border: none;
-  background: transparent;
-  color: var(--text-soft);
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-.admin-search-results {
-  display: grid;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.admin-search-results p {
-  margin: 8px 0 4px;
-  color: var(--text-soft);
-  font-size: 0.76rem;
-}
-
-.admin-search-result {
-  display: grid;
-  gap: 3px;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid transparent;
-  border-radius: 9px;
-  background: rgba(148, 163, 184, 0.06);
-  color: var(--text);
-  text-align: left;
-  cursor: pointer;
-}
-
-.admin-search-result:hover {
-  border-color: rgba(78, 168, 255, 0.28);
-  background: rgba(78, 168, 255, 0.1);
-}
-
-.admin-search-result span {
-  color: var(--blue);
-  font-size: 0.65rem;
-  text-transform: uppercase;
-}
-
-.admin-search-result strong {
-  font-size: 0.78rem;
 }
 
 .search-box input {
