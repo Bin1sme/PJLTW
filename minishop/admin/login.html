@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập Quản trị | AdminPro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/adminpro.css" />
+  </head>
+  <body>
+    <main>
+      <div class="login-container">
+        <div class="login-card">
+          <div class="login-brand">
+            <div class="brand-icon-pro">Q</div>
+            <h2>Admin<span>Pro</span> Control Center</h2>
+            <p>Hệ thống Quản lý Bán thiết bị Công nghệ & Kho</p>
+          </div>
+
+          <form id="adminLoginForm">
+            <div class="admin-form-group">
+              <label for="adminEmail">Tài khoản / Email đăng nhập</label>
+              <input
+                type="email"
+                id="adminEmail"
+                name="email"
+                placeholder="admin@minishop.local"
+                value="admin@minishop.local"
+                required
+              />
+            </div>
+
+            <div class="admin-form-group">
+              <label for="adminPass">Mật khẩu</label>
+              <input
+                type="password"
+                id="adminPass"
+                name="password"
+                placeholder="••••••••"
+                value="123456"
+                required
+              />
+            </div>
+
+            <div class="login-options">
+              <label class="login-remember">
+                <input type="checkbox" name="remember_me" checked /> Ghi nhớ phiên đăng nhập
+              </label>
+              <a href="#" class="login-forgot">Quên mật khẩu?</a>
+            </div>
+
+            <button type="submit" class="btn-admin-primary btn-login-submit">
+              Đăng Nhập Quản Trị
+            </button>
+          </form>
+
+          <div class="login-back-link">
+            <a href="../user/index.html">
+              ← Quay lại trang bán hàng
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function fillAccount(email, pass, name, role) {
+        document.getElementById('adminEmail').value = email;
+        document.getElementById('adminPass').value = pass;
+        window.tempLoginData = { name, role };
+      }
+
+      document.getElementById('adminLoginForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('adminEmail').value.trim();
+        const role = email.includes('staff') ? 'Staff' : 'Super Admin';
+        const name = email.includes('staff') ? 'Nhân Viên Bán Hàng' : 'Quản Trị Viên';
+
+        const session = {
+          email,
+          name,
+          role,
+          loggedInAt: new Date().toISOString()
+        };
+
+        localStorage.setItem('admin_session', JSON.stringify(session));
+
+        // Redirect to dashboard
+        window.location.href = 'index.html';
+      });
+    </script>
+  </body>
+</html>
