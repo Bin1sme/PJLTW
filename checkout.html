@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán & Đặt hàng | YuwaShop</title>
+    <meta name="description" content="Hoàn tất đơn đặt hàng thiết bị công nghệ chính hãng tại YuwaShop." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/phongvu-green.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link rel="stylesheet" href="assets/css/checkout.css" />
+  </head>
+  <body>
+    <!-- 1. TOP STRIP BANNER -->
+    <div class="top-strip-banner">
+      <div class="container-pv">
+        <span>🎉 ĐỔI ĐIỂM THI THPT • SHOW ĐIỂM GIẢM SÂU • TRẢ GÓP 0% • VOUCHER ĐẾN 5 TRIỆU ĐỒNG</span>
+        <a href="products.html">Xem chi tiết chương trình →</a>
+      </div>
+    </div>
+
+    <!-- 2. TOP UTILITY BAR -->
+    <div class="top-utility-bar">
+      <div class="container-pv top-utility-inner">
+        <ul class="utility-links-list">
+          <li><a href="#" data-location-action="locations">📍 Hệ thống 15 Showroom</a></li>
+          <li><a href="#">💼 Dành Cho Doanh Nghiệp</a></li>
+          <li><a href="#">🎓 Apple Education</a></li>
+        </ul>
+        <ul class="utility-links-list">
+          <li>Hotline: <span class="hotline-highlight">1800 1234 (Miễn phí)</span></li>
+          <li><a href="#">🛠️ Xây Dựng Cấu Hình PC</a></li>
+          <li><a href="admin/index.html" style="color: #6ee7b7; font-weight: 700;">⚙️ Trang Quản Trị (Admin)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. MAIN HEADER -->
+    <header class="main-header-pv">
+      <div class="container-pv header-inner-pv">
+        <a href="index.html" class="brand-logo-pv transition-link" aria-label="YuwaShop Home">
+          <div class="logo-icon-grid">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="brand-name-text">Yuwa<span>Shop</span></div>
+        </a>
+
+        <div class="header-search-wrap">
+          <form action="products.html" method="GET" class="search-input-group search-wrap">
+            <input
+              type="search"
+              name="q"
+              placeholder="Bạn muốn mua gì hôm nay? (Laptop, CPU, RTX 4070...)"
+              autocomplete="off"
+            />
+            <button type="submit" class="search-btn-pv" aria-label="Tìm kiếm">⌕</button>
+          </form>
+        </div>
+
+        <div class="header-actions-pv">
+          <button type="button" class="header-action-item cart-link" aria-label="Mở giỏ hàng">
+            <div class="action-icon-circle" style="background:#ecfdf5; color:#059669;">
+              🛒
+              <span class="action-badge-count cart-item-count">3</span>
+            </div>
+            <div class="action-text-meta">
+              <span>Đơn hàng</span>
+              <strong style="color:var(--green-primary);">66.470.000₫</strong>
+            </div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Checkout Section -->
+    <main class="checkout-main">
+      <div class="container">
+        <!-- Breadcrumb -->
+        <nav class="checkout-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Trang chủ</a>
+          <span>/</span>
+          <a href="products.html">Sản phẩm</a>
+          <span>/</span>
+          <span>Thanh toán & Đặt hàng</span>
+        </nav>
+
+        <div class="checkout-title-wrap">
+          <h1>Xác nhận đặt hàng</h1>
+          <p>Vui lòng điền thông tin người nhận và lựa chọn hình thức thanh toán phù hợp.</p>
+        </div>
+
+        <form id="checkoutForm" class="checkout-grid">
+          <!-- Left Column: Shipping & Payment Details -->
+          <div class="checkout-left">
+            <!-- 1. Thông tin giao hàng -->
+            <section class="checkout-section">
+              <div class="section-head">
+                <span class="section-step">1</span>
+                <h2>Thông tin nhận hàng (Khách hàng)</h2>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="fullName">Họ và tên người nhận <span class="required">*</span></label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Ví dụ: Nguyễn Văn An" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Số điện thoại liên hệ <span class="required">*</span></label>
+                  <input type="tel" id="phone" name="phone" placeholder="Ví dụ: 0901234567" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Địa chỉ Email nhận thông báo <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="email@example.com" required />
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="city">Tỉnh / Thành phố <span class="required">*</span></label>
+                  <select id="city" name="city" required>
+                    <option value="">-- Chọn Tỉnh / Thành phố --</option>
+                    <option value="TP. Hồ Chí Minh" selected>TP. Hồ Chí Minh</option>
+                    <option value="Hà Nội">Hà Nội</option>
+                    <option value="Đà Nẵng">Đà Nẵng</option>
+                    <option value="Cần Thơ">Cần Thơ</option>
+                    <option value="Hải Phòng">Hải Phòng</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="district">Quận / Huyện <span class="required">*</span></label>
+                  <input type="text" id="district" name="district" placeholder="Ví dụ: Quận 1 / Cầu Giấy" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="address">Địa chỉ chi tiết (Số nhà, tên đường, phường/xã) <span class="required">*</span></label>
+                <input type="text" id="address" name="address" placeholder="Ví dụ: 123 Lê Lợi, Phường Bến Nghé" required />
+              </div>
+
+              <div class="form-group">
+                <label for="notes">Ghi chú giao hàng (Tùy chọn)</label>
+                <textarea id="notes" name="notes" placeholder="Ví dụ: Giao vào giờ hành chính, gọi trước khi tới..."></textarea>
+              </div>
+            </section>
+
+            <!-- 2. Phương thức thanh toán -->
+            <section class="checkout-section">
+              <div class="section-head">
+                <span class="section-step">2</span>
+                <h2>Phương thức thanh toán</h2>
+              </div>
+
+              <div class="payment-methods">
+                <!-- COD -->
+                <label class="payment-option active" id="optionCod">
+                  <input type="radio" name="paymentMethod" value="COD" checked />
+                  <div class="payment-info">
+                    <strong>Thanh toán tiền mặt khi nhận hàng (COD)</strong>
+                    <p>Khách hàng kiểm tra thiết bị công nghệ và thanh toán trực tiếp cho nhân viên giao hàng.</p>
+                  </div>
+                </label>
+
+                <!-- Banking -->
+                <label class="payment-option" id="optionBanking">
+                  <input type="radio" name="paymentMethod" value="BANKING" />
+                  <div class="payment-info">
+                    <strong>Chuyển khoản ngân hàng (VietQR / Quét mã tự động)</strong>
+                    <p>Hệ thống tự động kích hoạt bảo hành điện tử ngay sau khi nhận tiền.</p>
+                    
+                    <div class="bank-transfer-details" id="bankDetails">
+                      <p><strong>Thông tin tài khoản YuwaShop:</strong></p>
+                      <div class="bank-grid">
+                        <div class="bank-qr">
+                          <div>
+                            <strong>[VietQR]</strong><br />
+                            Quét mã thanh toán
+                          </div>
+                        </div>
+                        <div>
+                          <p>Ngân hàng: <strong>Vietcombank (Chi nhánh Tân Bình)</strong></p>
+                          <p>Số tài khoản: <strong>0123 4567 8999</strong></p>
+                          <p>Chủ tài khoản: <strong>CONG TY YUWASHOP VIET NAM</strong></p>
+                          <p>Cú pháp CK: <strong id="transferSyntax">YUWASHOP SĐT_CUA_BAN</strong></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+
+                <!-- VNPAY -->
+                <label class="payment-option" id="optionVnPay">
+                  <input type="radio" name="paymentMethod" value="VNPAY" />
+                  <div class="payment-info">
+                    <strong>Thẻ ATM nội địa / Ví VNPAY / Thẻ Visa, MasterCard</strong>
+                    <p>Cổng thanh toán an toàn, bảo mật tiêu chuẩn quốc tế.</p>
+                  </div>
+                </label>
+              </div>
+            </section>
+          </div>
+
+          <!-- Right Column: Order Summary -->
+          <div class="checkout-right">
+            <div class="order-summary-box">
+              <h2>Đơn hàng của bạn (<span id="summaryItemCount">3</span> sản phẩm)</h2>
+
+              <!-- Product items list -->
+              <div class="summary-items" id="summaryItemsList">
+                <div class="summary-item">
+                  <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=120&q=80" alt="iPhone 15 Pro Max" />
+                  <div class="summary-item-info">
+                    <h4>iPhone 15 Pro Max 256GB</h4>
+                    <p>Số lượng: 1</p>
+                  </div>
+                  <div class="summary-item-price">28.990.000₫</div>
+                </div>
+
+                <div class="summary-item">
+                  <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=120&q=80" alt="Laptop ASUS ROG" />
+                  <div class="summary-item-info">
+                    <h4>Laptop ASUS ROG Zephyrus</h4>
+                    <p>Số lượng: 1</p>
+                  </div>
+                  <div class="summary-item-price">31.990.000₫</div>
+                </div>
+
+                <div class="summary-item">
+                  <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=120&q=80" alt="Loa JBL" />
+                  <div class="summary-item-info">
+                    <h4>Loa không dây JBL Charge 5</h4>
+                    <p>Số lượng: 1</p>
+                  </div>
+                  <div class="summary-item-price">5.490.000₫</div>
+                </div>
+              </div>
+
+              <!-- Coupon Voucher -->
+              <div class="coupon-group">
+                <input type="text" id="couponCode" placeholder="Mã giảm giá (VD: TECH10)" />
+                <button type="button" id="btnApplyCoupon">Áp dụng</button>
+              </div>
+
+              <!-- Calculation -->
+              <div class="summary-calculation">
+                <div class="calc-row">
+                  <span>Tạm tính</span>
+                  <strong id="calcSubtotal">66.470.000₫</strong>
+                </div>
+                <div class="calc-row">
+                  <span>Phí vận chuyển</span>
+                  <span style="color: #16a34a; font-weight: 600;">Miễn phí</span>
+                </div>
+                <div class="calc-row" id="discountRow" style="display: none;">
+                  <span>Giảm giá khuyến mãi</span>
+                  <span id="calcDiscount" style="color: #dc2626; font-weight: 600;">-0₫</span>
+                </div>
+                <div class="calc-row total">
+                  <span>Tổng thanh toán</span>
+                  <strong class="price-tag" id="calcTotal">66.470.000₫</strong>
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn-confirm-order">
+                <span>🛒</span> Xác nhận đặt hàng
+              </button>
+
+              <div class="order-guarantee">
+                <span>🔒</span> Cam kết bảo mật thông tin & chính hãng 100%
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="order-modal-overlay" id="orderSuccessModal">
+      <div class="order-modal-card">
+        <div class="success-icon-wrap">✓</div>
+        <h2>Đặt hàng thành công!</h2>
+        <p style="color: #64748b; margin-bottom: 12px;">Cảm ơn bạn đã tin chọn sản phẩm công nghệ tại YuwaShop.</p>
+        <div>
+          Mã đơn hàng: <span class="order-code-badge" id="modalOrderCode">ORD-20260920-891</span>
+        </div>
+
+        <div class="order-modal-info">
+          <p><span>Người nhận:</span> <strong id="modalCustomerName">Nguyễn Văn An</strong></p>
+          <p><span>Số điện thoại:</span> <strong id="modalPhone">0901234567</strong></p>
+          <p><span>Địa chỉ giao hàng:</span> <strong id="modalAddress">TP. Hồ Chí Minh</strong></p>
+          <p><span>Phương thức:</span> <strong id="modalPayment">COD (Tiền mặt khi nhận)</strong></p>
+          <p><span>Tổng thanh toán:</span> <strong id="modalTotal" style="color: #dc2626;">66.470.000₫</strong></p>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 24px;">
+          Đơn hàng đã được lưu vào hệ thống và kho hàng đang chuẩn bị sản phẩm cho bạn.
+        </p>
+
+        <div class="order-modal-actions">
+          <a href="products.html" class="btn-home" style="background:#f1f5f9; color:#334155; text-align:center;">Tiếp tục mua sắm</a>
+          <a href="index.html" class="btn-home" style="text-align:center;">Về trang chủ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer (Chuẩn Xanh Lá & Trắng) -->
+    <footer class="footer-pv">
+      <div class="container-pv">
+        <div class="footer-grid-4">
+          <div class="footer-col">
+            <h4>YuwaShop Technology</h4>
+            <p>Hệ thống bán lẻ thiết bị công nghệ, laptop gaming, linh kiện PC và phụ kiện chính hãng hàng đầu Việt Nam. Tông màu xanh lá & trắng thanh lịch, hiện đại.</p>
+            <p style="margin-top:12px; font-weight:600; color:var(--green-primary);">📞 Tổng đài hỗ trợ: 1800 1234 (8:00 - 21:30)</p>
+          </div>
+          <div class="footer-col">
+            <h4>Hỗ trợ khách hàng</h4>
+            <ul>
+              <li><a href="#">Hướng dẫn mua hàng trực tuyến</a></li>
+              <li><a href="#">Chính sách bảo hành & đổi trả</a></li>
+              <li><a href="#">Quy định giao hàng nhanh 2h</a></li>
+              <li><a href="#">Hướng dẫn trả góp 0% qua thẻ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Về YuwaShop</h4>
+            <ul>
+              <li><a href="#">Hệ thống 15 Showroom toàn quốc</a></li>
+              <li><a href="#">Chính sách bảo mật thông tin</a></li>
+              <li><a href="#">Hợp tác doanh nghiệp B2B</a></li>
+              <li><a href="admin/index.html">Dành cho Quản trị viên (Admin)</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Thanh toán & Kết nối</h4>
+            <p>Chấp nhận thanh toán đa dạng: VietQR, VNPAY, Thẻ ATM/Visa, COD tận nơi.</p>
+            <div style="display:flex; gap:10px; margin-top:12px; font-size:1.4rem;">
+              <span>💳</span><span>🏦</span><span>📱</span><span>🔒</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-bar">
+          <p>© 2026 YuwaShop. Đề tài 01: Website bán thiết bị công nghệ & Quản lý kho - Học viện Hàng không Việt Nam.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Logic Script for Checkout -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const checkoutForm = document.getElementById('checkoutForm');
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        const phoneInput = document.getElementById('phone');
+        const transferSyntax = document.getElementById('transferSyntax');
+        const modal = document.getElementById('orderSuccessModal');
+
+        // Payment Option Selector & Highlight
+        paymentOptions.forEach((option) => {
+          const radio = option.querySelector('input[type="radio"]');
+          option.addEventListener('click', () => {
+            paymentOptions.forEach((item) => item.classList.remove('active'));
+            option.classList.add('active');
+            radio.checked = true;
+          });
+        });
+
+        // Update phone in transfer syntax dynamically
+        if (phoneInput && transferSyntax) {
+          phoneInput.addEventListener('input', (e) => {
+            const val = e.target.value.trim() || 'SĐT_CUA_BAN';
+            transferSyntax.textContent = `YUWASHOP ${val}`;
+          });
+        }
+
+        // Coupon code handling
+        const btnApply = document.getElementById('btnApplyCoupon');
+        const couponInput = document.getElementById('couponCode');
+        const discountRow = document.getElementById('discountRow');
+        const calcDiscount = document.getElementById('calcDiscount');
+        const calcTotal = document.getElementById('calcTotal');
+
+        let discountAmount = 0;
+        let baseSubtotal = 66470000;
+
+        btnApply?.addEventListener('click', () => {
+          const code = couponInput.value.trim().toUpperCase();
+          if (code === 'TECH10' || code === 'WELCOME10') {
+            discountAmount = Math.round(baseSubtotal * 0.1);
+            discountRow.style.display = 'flex';
+            calcDiscount.textContent = '-' + discountAmount.toLocaleString('vi-VN') + '₫';
+            calcTotal.textContent = (baseSubtotal - discountAmount).toLocaleString('vi-VN') + '₫';
+            alert('Áp dụng mã giảm giá 10% thành công!');
+          } else if (code) {
+            alert('Mã giảm giá không hợp lệ hoặc đã hết hạn.');
+          }
+        });
+
+        // Submit form handler
+        checkoutForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const fullName = document.getElementById('fullName').value.trim();
+          const phone = document.getElementById('phone').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const city = document.getElementById('city').value;
+          const district = document.getElementById('district').value.trim();
+          const address = document.getElementById('address').value.trim();
+          const selectedPayment = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+          const paymentTexts = {
+            COD: 'Thanh toán khi nhận hàng (COD)',
+            BANKING: 'Chuyển khoản ngân hàng (Vietcombank)',
+            VNPAY: 'Thanh toán trực tuyến (VNPAY/Thẻ)'
+          };
+
+          // Generate simulated Order Code (e.g. ORD-20260920-8472)
+          const dateStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+          const randNum = Math.floor(1000 + Math.random() * 9000);
+          const orderCode = `ORD-${dateStr}-${randNum}`;
+
+          // Fill modal info
+          document.getElementById('modalOrderCode').textContent = orderCode;
+          document.getElementById('modalCustomerName').textContent = fullName;
+          document.getElementById('modalPhone').textContent = phone;
+          document.getElementById('modalAddress').textContent = `${address}, ${district}, ${city}`;
+          document.getElementById('modalPayment').textContent = paymentTexts[selectedPayment] || selectedPayment;
+          document.getElementById('modalTotal').textContent = calcTotal.textContent;
+
+          // Clear cart storage if available
+          try {
+            localStorage.removeItem('minishop.cart');
+          } catch(err) {}
+
+          // Show modal
+          modal.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>
