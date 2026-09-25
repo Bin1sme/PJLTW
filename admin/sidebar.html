@@ -1,0 +1,131 @@
+<aside class="admin-sidebar">
+        <!-- Brand Logo -->
+        <div class="sidebar-brand">
+          <div class="brand-icon-pro">Q</div>
+          <div class="brand-text-pro">Admin<span>Pro</span></div>
+        </div>
+
+        <!-- Sidebar User Profile -->
+        <div class="sidebar-user" id="sidebarUserProfile" title="Bấm để chỉnh sửa Avatar &amp; Hồ sơ">
+          <div class="user-avatar-wrap">
+            <img id="sidebarAvatarImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar" />
+            <span class="online-dot"></span>
+          </div>
+          <div class="user-meta">
+            <h4 id="sidebarUserName">Quản Trị Viên</h4>
+            <span><i id="sidebarUserRole">Super Admin</i> • Đổi avatar ✎</span>
+          </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="sidebar-nav">
+          <!-- 1. Home -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-dashboard" data-page="index.html" onclick="if(!document.getElementById('tab-dashboard')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              <span>Home</span>
+            </div>
+          </button>
+
+          <!-- 2. Analytics -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-suppliers" onclick="if(!document.getElementById('tab-suppliers')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <span>Analytics</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 3. Orders -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-orders" onclick="if(!document.getElementById('tab-orders')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <span>Orders</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 4. Customers -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-customers" onclick="if(!document.getElementById('tab-customers')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
+              <span>Customers</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 5. Products -->
+          <button class="nav-link-item" type="button" data-admin-tab="tab-products" onclick="if(!document.getElementById('tab-products')) location.href='index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              <span>Products</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 6. Inventory -->
+          <button class="nav-link-item" type="button" data-page="inventory.html" onclick="location.href='inventory.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              <span>Inventory</span>
+            </div>
+          </button>
+
+          <!-- 7. Promotions -->
+          <button class="nav-link-item" type="button" data-page="promotions.html" onclick="location.href='promotions.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16l3-1.5 3 1.5 3-1.5 3 1.5 3-1.5 3 1.5V4a2 2 0 0 0-2-2z"></path><line x1="8" y1="7" x2="16" y2="7"></line><line x1="8" y1="11" x2="16" y2="11"></line><line x1="8" y1="15" x2="12" y2="15"></line></svg>
+              <span>Promotions</span>
+            </div>
+          </button>
+
+          <!-- 8. Staff & roles -->
+          <button class="nav-link-item" type="button" data-page="staff.html" onclick="location.href='staff.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Staff &amp; roles</span>
+            </div>
+          </button>
+
+          <!-- 9. Audit log -->
+          <button class="nav-link-item" type="button" data-page="audit-log.html" onclick="location.href='audit-log.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <span>Audit log</span>
+            </div>
+          </button>
+
+          <!-- 10. Settings -->
+          <button class="nav-link-item" type="button" data-page="settings.html" onclick="location.href='settings.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span>Settings</span>
+            </div>
+          </button>
+
+          <!-- 11. Pages -->
+          <button class="nav-link-item" type="button" onclick="location.href='../index.html'">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+              <span>Pages</span>
+            </div>
+            <span class="nav-chevron">›</span>
+          </button>
+
+          <!-- 12. Language -->
+          <button class="nav-link-item" type="button" onclick="showToast('Ngôn ngữ hiện tại: Tiếng Việt (VN)', 'info')">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>Language</span>
+            </div>
+          </button>
+
+         <!-- 13. Login / Logout -->
+         <button class="nav-link-item" type="button" id="sidebarLoginBtn">
+            <div class="nav-link-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span id="sidebarLoginText">Logout</span>
+            </div>
+          </button>
+        </nav>
+      </aside>
