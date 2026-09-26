@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YuwaShop | Hệ thống Bán lẻ Thiết bị Công nghệ & Laptop Chính Hãng</title>
+    <meta
+      name="description"
+      content="YuwaShop - Hệ thống bán lẻ máy tính, laptop, điện thoại, linh kiện chính hãng giá tốt hàng đầu Việt Nam. Tông xanh lá & trắng đẳng cấp."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/phongvu-green.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- 1. TOP STRIP BANNER (Khuyến mãi trên cùng - Phong Vũ style) -->
+    <div class="top-strip-banner">
+      <div class="container-pv">
+        <span>🎉 ĐỔI ĐIỂM THI THPT • SHOW ĐIỂM GIẢM SÂU • TRẢ GÓP 0% • VOUCHER ĐẾN 5 TRIỆU ĐỒNG</span>
+        <a href="products.html">Xem chi tiết chương trình →</a>
+      </div>
+    </div>
+
+    <!-- 2. TOP UTILITY BAR (Thanh tiện ích màu Xanh đậm) -->
+    <div class="top-utility-bar">
+      <div class="container-pv top-utility-inner">
+        <ul class="utility-links-list">
+          <li>
+            <a href="#" data-location-action="locations">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+              Hệ thống 15 Showroom
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+              Dành Cho Doanh Nghiệp
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>
+              Apple Education
+            </a>
+          </li>
+        </ul>
+        <ul class="utility-links-list">
+          <li>Hotline: <span class="hotline-highlight">1800 1234 (Miễn phí)</span></li>
+          <li>
+            <a href="#">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              Xây Dựng Cấu Hình PC
+            </a>
+          </li>
+          <li>
+            <a href="admin/index.html" style="color: #6ee7b7; font-weight: 700;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              Trang Quản Trị (Admin)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. MAIN HEADER (Nền trắng tinh khôi + Điểm nhấn Xanh lá) -->
+    <header class="main-header-pv">
+      <div class="container-pv header-inner-pv">
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo-pv" aria-label="YuwaShop Home">
+          <div class="logo-icon-grid">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="brand-name-text">Yuwa<span>Shop</span></div>
+        </a>
+
+        <!-- Search Box -->
+        <div class="header-search-wrap">
+          <form action="products.html" method="GET" class="search-input-group">
+            <input
+              type="search"
+              name="q"
+              placeholder="Bạn muốn mua gì hôm nay? (Ví dụ: Laptop Gaming, iPhone 15, Chuột Logitech...)"
+              autocomplete="off"
+            />
+            <button type="submit" class="search-btn-pv" aria-label="Tìm kiếm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </button>
+          </form>
+          <div class="quick-search-tags">
+            <a href="products.html?category=phone">iPhone 15 Pro Max</a>
+            <a href="products.html?category=laptop">Laptop ASUS ROG</a>
+            <a href="products.html?category=audio">Tai nghe Sony XM5</a>
+            <a href="products.html?category=accessory">Chuột MX Master 3S</a>
+            <a href="products.html?category=phone">Galaxy S24 Ultra</a>
+          </div>
+        </div>
+
+        <!-- Header Actions (Tài khoản, Thông báo, Giỏ hàng) -->
+        <div class="header-actions-pv">
+          <!-- Đăng nhập -->
+          <button type="button" class="header-action-item login-btn" aria-label="Tài khoản">
+            <div class="action-icon-circle">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="action-text-meta">
+              <span>Tài khoản</span>
+              <strong>Đăng nhập / Ký</strong>
+            </div>
+          </button>
+
+          <!-- Giỏ hàng -->
+          <button type="button" class="header-action-item cart-link" aria-label="Mở giỏ hàng">
+            <div class="action-icon-circle" style="background:#ecfdf5; color:#059669;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              <span class="action-badge-count cart-item-count">3</span>
+            </div>
+            <div class="action-text-meta">
+              <span>Giỏ hàng</span>
+              <strong style="color:var(--green-primary);">66.470.000₫</strong>
+            </div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 4. HERO SECTION (3 Cột: Danh mục dọc có Mega Menu + Slider Banner + Banner phụ bên phải) -->
+    <section class="hero-layout-section">
+      <div class="container-pv">
+        <div class="hero-grid-3col">
+          <!-- Cột 1: Danh mục sản phẩm dạng cột đứng (Có Mega Menu Flyout như ảnh 2) -->
+          <aside class="category-sidebar-wrap">
+            <ul class="cat-vertical-menu">
+              <!-- 1. Laptop -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=laptop" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+                    <path d="M2 20h20"></path>
+                  </svg>
+                  <span class="cat-label">Laptop</span>
+                </a>
+                <!-- Mega Menu Flyout Laptop -->
+                <div class="mega-menu-flyout">
+                  <div class="mega-col-group">
+                    <h4>Thương Hiệu</h4>
+                    <ul>
+                      <li><a href="products.html">Laptop ASUS</a></li>
+                      <li><a href="products.html">Laptop Dell</a></li>
+                      <li><a href="products.html">Laptop HP</a></li>
+                      <li><a href="products.html">Laptop Lenovo</a></li>
+                      <li><a href="products.html">Laptop MSI Gaming</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col-group">
+                    <h4>Nhu Cầu Sử Dụng</h4>
+                    <ul>
+                      <li><a href="products.html">Laptop Gaming</a></li>
+                      <li><a href="products.html">Laptop Mỏng Nhẹ</a></li>
+                      <li><a href="products.html">Học Tập - Văn Phòng</a></li>
+                      <li><a href="products.html">Đồ Họa - Kỹ Thuật</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col-group">
+                    <h4>Mức Giá</h4>
+                    <ul>
+                      <li><a href="products.html">Dưới 15 Triệu</a></li>
+                      <li><a href="products.html">Từ 15 - 25 Triệu</a></li>
+                      <li><a href="products.html">Từ 25 - 35 Triệu</a></li>
+                      <li><a href="products.html">Cao Cấp Trên 35 Triệu</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-banner-ad">
+                    <h5>ASUS ROG ZEPHYRUS</h5>
+                    <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:10px;">OLED 2.5K 240Hz • Giảm ngay 3 Triệu</p>
+                    <a href="product-detail.html" class="banner-btn-cta" style="font-size:0.78rem; padding:6px 12px;">Xem Ngay</a>
+                  </div>
+                </div>
+              </li>
+
+              <!-- 2. Apple -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=phone" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.64 1.35-.57.65-1.07 1.72-.94 2.74 1.01.08 2.03-.49 2.66-1.24z"/>
+                  </svg>
+                  <span class="cat-label">Apple</span>
+                </a>
+                <!-- Mega Menu Apple Flyout -->
+                <div class="mega-menu-flyout">
+                  <div class="mega-col-group">
+                    <h4>iPhone</h4>
+                    <ul>
+                      <li><a href="products.html">iPhone 15 Pro Max</a></li>
+                      <li><a href="products.html">iPhone 15 Pro</a></li>
+                      <li><a href="products.html">iPhone 15 Plus</a></li>
+                      <li><a href="products.html">iPhone 14 Series</a></li>
+                    </ul>
+                    <h4 style="margin-top:14px;">iPad</h4>
+                    <ul>
+                      <li><a href="products.html">iPad Pro M4</a></li>
+                      <li><a href="products.html">iPad Air 2024</a></li>
+                      <li><a href="products.html">iPad Gen 10</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col-group">
+                    <h4>Mac OS</h4>
+                    <ul>
+                      <li><a href="products.html">MacBook Pro M3</a></li>
+                      <li><a href="products.html">MacBook Air M2 / M3</a></li>
+                      <li><a href="products.html">Mac Mini M2</a></li>
+                      <li><a href="products.html">iMac 24-inch M3</a></li>
+                      <li><a href="products.html">Mac Studio</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col-group">
+                    <h4>Apple Watch & Phụ Kiện</h4>
+                    <ul>
+                      <li><a href="products.html">Apple Watch Ultra 2</a></li>
+                      <li><a href="products.html">Apple Watch Series 9</a></li>
+                      <li><a href="products.html">AirPods Pro 2 USB-C</a></li>
+                      <li><a href="products.html">AirPods Max</a></li>
+                      <li><a href="products.html">Apple Pencil Pro</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-banner-ad">
+                    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=300&q=80" style="max-height:100px; margin-bottom:8px; border-radius:6px;" alt="Apple" />
+                    <h5>IPHONE 15 PRO MAX</h5>
+                    <span style="font-size:0.75rem; color:var(--price-red); font-weight:800; margin-bottom:10px;">Giảm 4.000.000₫</span>
+                    <a href="products.html" class="banner-btn-cta" style="font-size:0.75rem; padding:6px 12px;">Mua Trả Góp 0%</a>
+                  </div>
+                </div>
+              </li>
+
+              <!-- 3. PC - Máy tính bàn -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=all" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="12" height="11" rx="1.5"></rect>
+                    <path d="M8 14v3M5 17h6"></path>
+                    <rect x="16" y="3" width="6" height="17" rx="1.5"></rect>
+                    <circle cx="19" cy="6" r="0.8" fill="currentColor"></circle>
+                    <circle cx="19" cy="9" r="0.8" fill="currentColor"></circle>
+                  </svg>
+                  <span class="cat-label">PC - Máy tính bàn</span>
+                </a>
+              </li>
+
+              <!-- 4. Linh kiện máy tính -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=accessory" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                    <rect x="8" y="8" width="8" height="8" rx="1"></rect>
+                    <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"></path>
+                  </svg>
+                  <span class="cat-label">Linh kiện máy tính</span>
+                </a>
+                <!-- Mega Menu Linh kiện -->
+                <div class="mega-menu-flyout">
+                  <div class="mega-col-group">
+                    <h4>Vi Xử Lý & Đồ Họa</h4>
+                    <ul>
+                      <li><a href="products.html">CPU Intel Core / Core Ultra</a></li>
+                      <li><a href="products.html">CPU AMD Ryzen Series</a></li>
+                      <li><a href="products.html">VGA NVIDIA GeForce RTX</a></li>
+                      <li><a href="products.html">VGA AMD Radeon RX</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col-group">
+                    <h4>Bo Mạch & Bộ Nhớ</h4>
+                    <ul>
+                      <li><a href="products.html">Mainboard ASUS, MSI, Gigabyte</a></li>
+                      <li><a href="products.html">RAM DDR4 / DDR5 Desktop</a></li>
+                      <li><a href="products.html">Ổ cứng SSD NVMe PCIe 4.0</a></li>
+                      <li><a href="products.html">Ổ cứng di động & HDD</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col-group">
+                    <h4>Vỏ Case & Nguồn PC</h4>
+                    <ul>
+                      <li><a href="products.html">Nguồn máy tính (PSU) 80 Plus</a></li>
+                      <li><a href="products.html">Vỏ Case bể cá ATX / m-ATX</a></li>
+                      <li><a href="products.html">Tản nhiệt nước All-in-One (AIO)</a></li>
+                      <li><a href="products.html">Tản nhiệt khí & Quạt ARGB</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-banner-ad">
+                    <h5>LINH KIỆN PC CHÍNH HÃNG</h5>
+                    <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:10px;">Bảo hành 36 tháng • Trả góp 0%</p>
+                    <a href="products.html" class="banner-btn-cta" style="font-size:0.75rem; padding:6px 12px;">Xem Tất Cả</a>
+                  </div>
+                </div>
+              </li>
+
+              <!-- 5. Màn hình máy tính -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=all" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                    <path d="M8 21h8M12 17v4"></path>
+                  </svg>
+                  <span class="cat-label">Màn hình máy tính</span>
+                </a>
+              </li>
+
+              <!-- 6. Điện thoại, Máy tính bảng -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=phone" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="2" width="10" height="18" rx="2"></rect>
+                    <circle cx="8" cy="17" r="0.8" fill="currentColor"></circle>
+                    <path d="M16 6h4a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6"></path>
+                  </svg>
+                  <span class="cat-label">Điện thoại, Máy tính bảng</span>
+                </a>
+              </li>
+
+              <!-- 7. Phím chuột & Gaming... -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=accessory" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="6" width="20" height="12" rx="6"></rect>
+                    <path d="M6 12h4M8 10v4M15 11h.01M17 13h.01"></path>
+                  </svg>
+                  <span class="cat-label">Phím chuột & Gaming...</span>
+                </a>
+              </li>
+
+              <!-- 8. Phụ kiện -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=accessory" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 3v4M16 3v4M6 7h12a2 2 0 0 1 2 2v5a4 4 0 0 1-4 4h-2v3M8 18a4 4 0 0 1-4-4V9a2 2 0 0 1 2-2z"></path>
+                    <path d="M12 10l-1.5 2.5h3l-1.5 2.5" stroke-width="1.5"></path>
+                  </svg>
+                  <span class="cat-label">Phụ kiện</span>
+                </a>
+              </li>
+
+              <!-- 9. Thiết bị âm thanh -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=audio" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                  </svg>
+                  <span class="cat-label">Thiết bị âm thanh</span>
+                </a>
+              </li>
+
+              <!-- 10. Thiết bị mạng - camera ... -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=accessory" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="13" width="20" height="8" rx="2"></rect>
+                    <path d="M6 13V5M18 13V5M12 13V8"></path>
+                    <circle cx="7" cy="17" r="0.8" fill="currentColor"></circle>
+                    <circle cx="12" cy="17" r="0.8" fill="currentColor"></circle>
+                    <circle cx="17" cy="17" r="0.8" fill="currentColor"></circle>
+                  </svg>
+                  <span class="cat-label">Thiết bị mạng - camera ...</span>
+                </a>
+              </li>
+
+              <!-- 11. Điện máy - Điện gia dụng -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=all" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="2" width="18" height="20" rx="2"></rect>
+                    <path d="M3 8h18"></path>
+                    <circle cx="12" cy="15" r="3.5"></circle>
+                    <circle cx="7" cy="5" r="0.9" fill="currentColor"></circle>
+                    <circle cx="10" cy="5" r="0.9" fill="currentColor"></circle>
+                  </svg>
+                  <span class="cat-label">Điện máy - Điện gia dụng</span>
+                </a>
+              </li>
+
+              <!-- 12. Hàng thanh lý -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=all" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 9h16l-1.8 11h-12.4z"></path>
+                    <path d="M8 9V5a4 4 0 0 1 8 0v4"></path>
+                    <path d="M8 15h8" stroke-width="1.5"></path>
+                    <path d="M10 12h4" stroke-width="1.5"></path>
+                  </svg>
+                  <span class="cat-label">Hàng thanh lý</span>
+                </a>
+              </li>
+
+              <!-- 13. Technews -->
+              <li class="cat-menu-item">
+                <a href="products.html?category=all" class="cat-menu-link">
+                  <svg class="pv-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6a2 2 0 0 0-2 2z"></path>
+                    <path d="M14 2v6h6M8 13h8M8 17h5"></path>
+                  </svg>
+                  <span class="cat-label">Technews</span>
+                </a>
+              </li>
+            </ul>
+          </aside>
+
+          <!-- Cột 2: Banner Carousel Chính & 4 Hộp khuyến mãi nhỏ ở dưới -->
+          <div class="hero-center-col">
+            <div class="hero-main-banner-card">
+              <div class="banner-content-left">
+                <span class="banner-pill-badge">⚡ SHOW ĐIỂM GIẢM SÂU 2026</span>
+                <h2>Lễ Hội Công Nghệ Sinh Viên</h2>
+                <p>Voucher giảm đến <strong>5 Triệu Đồng</strong> • Hỗ trợ Trả Góp 0% thủ tục 5 phút.</p>
+                <a href="products.html" class="banner-btn-cta">Khám Phá Ngay →</a>
+              </div>
+              <div class="banner-image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80"
+                  alt="Laptop ROG"
+                />
+              </div>
+            </div>
+
+            <!-- 4 Khối nhỏ dưới Slider (Y hệt ảnh 1 Phong Vũ) -->
+            <div class="sub-promos-grid-4">
+              <div class="sub-promo-card" onclick="location.href='products.html'">
+                <div class="sub-promo-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M8 14v3M5 17h6"/><rect x="16" y="3" width="6" height="17" rx="1.5"/><circle cx="19" cy="6" r="0.7" fill="currentColor"/><circle cx="19" cy="9" r="0.7" fill="currentColor"/></svg>
+                </div>
+                <div>
+                  <h5>BUILD PC</h5>
+                  <span>Giảm thêm 3 Triệu</span>
+                </div>
+              </div>
+              <div class="sub-promo-card" onclick="location.href='products.html'">
+                <div class="sub-promo-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </div>
+                <div>
+                  <h5>BỘ QUÀ LAPTOP</h5>
+                  <span>Trị giá 3 Triệu</span>
+                </div>
+              </div>
+              <div class="sub-promo-card" onclick="location.href='products.html'">
+                <div class="sub-promo-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"/></svg>
+                </div>
+                <div>
+                  <h5>IPAD CHÍNH HÃNG</h5>
+                  <span>Tặng củ sạc nhanh</span>
+                </div>
+              </div>
+              <div class="sub-promo-card" onclick="location.href='products.html'">
+                <div class="sub-promo-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <div>
+                  <h5>MÀN HÌNH 2K</h5>
+                  <span>Giá từ 2.890.000₫</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cột 3: 2 Banner Xếp Chồng Bên Phải (Ảnh 1 Phong Vũ) -->
+          <div class="hero-right-col">
+            <article class="promo-stack-card">
+              <span class="badge-pv">ƯU ĐÃI ĐẶC QUYỀN</span>
+              <h3>Học Sinh - Sinh Viên</h3>
+              <p>Giảm thêm 5% tối đa 1.000.000₫ cho tất cả Laptop & Tablet.</p>
+              <div class="promo-discount-bold">GIẢM 5%</div>
+              <a href="products.html" class="head-view-all-link" style="margin-top:auto;">Xem danh sách áp dụng →</a>
+            </article>
+
+            <article class="promo-stack-card" style="border-top-color: #10b981;">
+              <span class="badge-pv" style="background:#fef3c7; color:#b45309;">HOT THÁNG NÀY</span>
+              <h3>Phụ Kiện Gaming</h3>
+              <p>Bàn phím cơ, chuột không dây và tai nghe giảm cực đậm.</p>
+              <div class="promo-discount-bold">GIẢM ĐẾN 50%</div>
+              <a href="products.html" class="head-view-all-link" style="margin-top:auto;">Săn deal ngay →</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. QUICK FEATURE NAVIGATION STRIP (8 Icons ưu đãi hot - Phong Vũ Style) -->
+    <section style="margin-bottom: 24px;">
+      <div class="container-pv">
+        <div class="quick-features-bar">
+          <div class="quick-features-grid">
+            <div class="quick-feature-item" onclick="location.href='products.html'">
+              <div class="feature-circle-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <span>Giờ Vàng Giá Sốc</span>
+            </div>
+            <div class="quick-feature-item" onclick="location.href='products.html'">
+              <div class="feature-circle-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              </div>
+              <span>Đổi Điểm Thi THPT</span>
+            </div>
+            <div class="quick-feature-item" onclick="location.href='products.html'">
+              <div class="feature-circle-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>
+              </div>
+              <span>Điện Máy - IT</span>
+            </div>
+            <div class="quick-feature-item" onclick="location.href='products.html'">
+              <div class="feature-circle-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </div>
+              <span>Trả Góp 0%</span>
+            </div>
+            <div class="quick-feature-item" onclick="location.href='products.html'">
+              <div class="feature-circle-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.64 1.35-.57.65-1.07 1.72-.94 2.74 1.01.08 2.03-.49 2.66-1.24z"/></svg>
+              </div>
+              <span>Apple Education</span>
+            </div>
+            <div class="quick-feature-item" onclick="location.href='products.html'">
+              <div class="feature-circle-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              </div>
+              <span>Tải App Nhận Quà</span>
+            </div>
+            <div class="quick-feature-item" onclick="location.href='products.html'">
+              <div class="feature-circle-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+              </div>
+              <span>Xả Kho Trưng Bày</span>
+            </div>
+            <div class="quick-feature-item" onclick="location.href='products.html'">
+              <div class="feature-circle-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span>Bảo Hành Toàn Diện</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SHOWCASE: THIẾT BỊ BÁN CHẠY NHẤT (Chuẩn thẻ sản phẩm Phong Vũ) -->
+    <section class="product-showcase-section">
+      <div class="container-pv">
+        <div class="section-head-pv">
+          <h2>Sản Phẩm Công Nghệ Nổi Bật</h2>
+          <div class="head-filter-tabs">
+            <button class="head-tab-btn active" type="button">Tất cả</button>
+            <button class="head-tab-btn" type="button" onclick="location.href='products.html?category=phone'">Apple</button>
+            <button class="head-tab-btn" type="button" onclick="location.href='products.html?category=laptop'">ASUS ROG</button>
+            <button class="head-tab-btn" type="button" onclick="location.href='products.html?category=audio'">Sony</button>
+            <button class="head-tab-btn" type="button" onclick="location.href='products.html?category=accessory'">Logitech</button>
+          </div>
+          <a href="products.html" class="head-view-all-link">Xem tất cả 2.170 sản phẩm ›</a>
+        </div>
+
+        <div class="products-grid-pv">
+          <!-- Card 1: iPhone 15 Pro Max -->
+          <article class="pv-product-card">
+            <span class="save-money-badge">TIẾT KIỆM 3.000.000₫</span>
+            <div class="pv-card-thumb">
+              <a href="product-detail.html">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=400&q=80" alt="iPhone 15 Pro Max" />
+              </a>
+            </div>
+            <div class="pv-brand-tag">APPLE</div>
+            <h3 class="pv-card-title">
+              <a href="product-detail.html">iPhone 15 Pro Max 256GB Titan Tự Nhiên Chính Hãng VN/A</a>
+            </h3>
+            <div class="pv-card-specs">Chip A17 Pro • OLED 120Hz • 256GB</div>
+            <div class="pv-price-row">
+              <span class="pv-current-price">28.990.000₫</span>
+              <span class="pv-old-price">31.990.000₫</span>
+            </div>
+            <button type="button" class="pv-btn-add-cart buy-btn">
+              <span>🛒</span> Thêm vào giỏ
+            </button>
+          </article>
+
+          <!-- Card 2: ASUS ROG Zephyrus G16 -->
+          <article class="pv-product-card">
+            <span class="save-money-badge">TIẾT KIỆM 3.000.000₫</span>
+            <div class="pv-card-thumb">
+              <a href="product-detail.html">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" alt="Laptop ASUS ROG" />
+              </a>
+            </div>
+            <div class="pv-brand-tag">ASUS</div>
+            <h3 class="pv-card-title">
+              <a href="product-detail.html">Laptop Gaming ASUS ROG Zephyrus G16 OLED 240Hz</a>
+            </h3>
+            <div class="pv-card-specs">Intel Core Ultra 7 • RTX 4060 • 16GB • 1TB</div>
+            <div class="pv-price-row">
+              <span class="pv-current-price">31.990.000₫</span>
+              <span class="pv-old-price">34.990.000₫</span>
+            </div>
+            <button type="button" class="pv-btn-add-cart buy-btn">
+              <span>🛒</span> Thêm vào giỏ
+            </button>
+          </article>
+
+          <!-- Card 3: Tai nghe Sony WH-1000XM5 -->
+          <article class="pv-product-card">
+            <span class="save-money-badge">TIẾT KIỆM 1.500.000₫</span>
+            <div class="pv-card-thumb">
+              <a href="product-detail.html">
+                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=400&q=80" alt="Tai nghe Sony XM5" />
+              </a>
+            </div>
+            <div class="pv-brand-tag">SONY</div>
+            <h3 class="pv-card-title">
+              <a href="product-detail.html">Tai nghe không dây chống ồn Sony WH-1000XM5 Đen</a>
+            </h3>
+            <div class="pv-card-specs">Chống ồn đỉnh cao • Pin 30 giờ • LDAC Hi-Res</div>
+            <div class="pv-price-row">
+              <span class="pv-current-price">6.490.000₫</span>
+              <span class="pv-old-price">7.990.000₫</span>
+            </div>
+            <button type="button" class="pv-btn-add-cart buy-btn">
+              <span>🛒</span> Thêm vào giỏ
+            </button>
+          </article>
+
+          <!-- Card 4: Chuột Logitech MX Master 3S -->
+          <article class="pv-product-card">
+            <span class="save-money-badge">TIẾT KIỆM 300.000₫</span>
+            <div class="pv-card-thumb">
+              <a href="product-detail.html">
+                <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=400&q=80" alt="Chuột Logitech" />
+              </a>
+            </div>
+            <div class="pv-brand-tag">LOGITECH</div>
+            <h3 class="pv-card-title">
+              <a href="product-detail.html">Chuột công thái học cao cấp Logitech MX Master 3S</a>
+            </h3>
+            <div class="pv-card-specs">Cảm biến 8000 DPI • Yên tĩnh Quiet Clicks</div>
+            <div class="pv-price-row">
+              <span class="pv-current-price">2.190.000₫</span>
+              <span class="pv-old-price">2.490.000₫</span>
+            </div>
+            <button type="button" class="pv-btn-add-cart buy-btn">
+              <span>🛒</span> Thêm vào giỏ
+            </button>
+          </article>
+
+          <!-- Card 5: Samsung Galaxy S24 Ultra -->
+          <article class="pv-product-card">
+            <span class="save-money-badge">TIẾT KIỆM 4.000.000₫</span>
+            <div class="pv-card-thumb">
+              <a href="product-detail.html">
+                <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=400&q=80" alt="Samsung S24 Ultra" />
+              </a>
+            </div>
+            <div class="pv-brand-tag">SAMSUNG</div>
+            <h3 class="pv-card-title">
+              <a href="product-detail.html">Samsung Galaxy S24 Ultra 512GB Xám Titan Galaxy AI</a>
+            </h3>
+            <div class="pv-card-specs">Snapdragon 8 Gen 3 • Zoom 100x • Bút S-Pen</div>
+            <div class="pv-price-row">
+              <span class="pv-current-price">26.990.000₫</span>
+              <span class="pv-old-price">30.990.000₫</span>
+            </div>
+            <button type="button" class="pv-btn-add-cart buy-btn">
+              <span>🛒</span> Thêm vào giỏ
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. SUB-CATEGORY ICON SHOWCASE (Theo mẫu ảnh 3 Phong Vũ Linh Kiện) -->
+    <section>
+      <div class="container-pv">
+        <div class="subcat-icons-section">
+          <h3>Chọn Nhanh Theo Nhóm Linh Kiện PC & Laptop</h3>
+          <div class="subcat-grid-8">
+            <div class="subcat-icon-card" onclick="location.href='products.html'">
+              <div class="subcat-icon-thumb">🔲</div>
+              <span>CPU - Vi Xử Lý</span>
+            </div>
+            <div class="subcat-icon-card" onclick="location.href='products.html'">
+              <div class="subcat-icon-thumb">🎮</div>
+              <span>Card Màn Hình VGA</span>
+            </div>
+            <div class="subcat-icon-card" onclick="location.href='products.html'">
+              <div class="subcat-icon-thumb">🟩</div>
+              <span>Mainboard Bo Mạch</span>
+            </div>
+            <div class="subcat-icon-card" onclick="location.href='products.html'">
+              <div class="subcat-icon-thumb">📊</div>
+              <span>RAM Bộ Nhớ Trong</span>
+            </div>
+            <div class="subcat-icon-card" onclick="location.href='products.html'">
+              <div class="subcat-icon-thumb">💾</div>
+              <span>Ổ Cứng SSD M.2</span>
+            </div>
+            <div class="subcat-icon-card" onclick="location.href='products.html'">
+              <div class="subcat-icon-thumb">🖥️</div>
+              <span>Vỏ Case Máy Tính</span>
+            </div>
+            <div class="subcat-icon-card" onclick="location.href='products.html'">
+              <div class="subcat-icon-thumb">❄️</div>
+              <span>Tản Nhiệt Nước / Khí</span>
+            </div>
+            <div class="subcat-icon-card" onclick="location.href='products.html'">
+              <div class="subcat-icon-thumb">⚡</div>
+              <span>Nguồn Máy Tính (PSU)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRAWER GIỎ HÀNG (Cart Drawer) -->
+    <div class="cart-overlay" data-cart-close></div>
+    <aside class="cart-drawer" aria-label="Giỏ hàng" aria-hidden="true">
+      <div class="cart-drawer-head">
+        <div>
+          <p class="eyebrow" style="color:var(--green-primary); font-weight:700;">HỆ THỐNG YUWASHOP</p>
+          <h2>Giỏ hàng <span class="cart-item-count">(3)</span></h2>
+        </div>
+        <button type="button" class="cart-close" data-cart-close aria-label="Đóng giỏ hàng">×</button>
+      </div>
+      <div class="cart-items">
+        <article class="cart-item">
+          <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=240&q=80" alt="iPhone 15 Pro Max" />
+          <div class="cart-item-info">
+            <h3>iPhone 15 Pro Max 256GB</h3>
+            <p>1 x 28.990.000₫</p>
+          </div>
+          <button type="button" class="cart-item-remove" aria-label="Xóa">×</button>
+        </article>
+        <article class="cart-item">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=240&q=80" alt="Laptop ASUS ROG" />
+          <div class="cart-item-info">
+            <h3>Laptop ASUS ROG Zephyrus</h3>
+            <p>1 x 31.990.000₫</p>
+          </div>
+          <button type="button" class="cart-item-remove" aria-label="Xóa">×</button>
+        </article>
+        <article class="cart-item">
+          <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=240&q=80" alt="Loa JBL" />
+          <div class="cart-item-info">
+            <h3>Loa không dây JBL Charge 5</h3>
+            <p>1 x 5.490.000₫</p>
+          </div>
+          <button type="button" class="cart-item-remove" aria-label="Xóa">×</button>
+        </article>
+      </div>
+      <div class="cart-drawer-foot">
+        <div class="cart-total">
+          <span>Tổng thanh toán</span>
+          <strong style="color:var(--price-red); font-size:1.2rem;">66.470.000₫</strong>
+        </div>
+        <button type="button" class="primary-btn cart-checkout" style="background:var(--green-primary);">
+          Tiến hành thanh toán →
+        </button>
+        <a href="products.html" class="cart-continue transition-link">Tiếp tục chọn thêm sản phẩm</a>
+      </div>
+    </aside>
+
+    <!-- DRAWER ĐĂNG NHẬP / ĐĂNG KÝ -->
+    <div class="auth-overlay" data-auth-close></div>
+    <aside class="auth-drawer" aria-label="Đăng nhập và đăng ký" aria-hidden="true">
+      <div class="auth-drawer-head">
+        <div class="auth-brand">
+          <strong style="color:var(--green-primary); font-size:1.2rem;">YuwaShop Account</strong>
+        </div>
+        <button type="button" class="auth-close" data-auth-close aria-label="Đóng">×</button>
+      </div>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-auth-tab="login">Đăng nhập</button>
+        <button class="auth-tab" data-auth-tab="register">Đăng ký mới</button>
+      </div>
+      <form class="auth-form" data-auth-form="login">
+        <label>Email hoặc Số điện thoại<input type="text" name="email" required placeholder="name@example.com" /></label>
+        <label>Mật khẩu<input type="password" name="password" required placeholder="••••••••" /></label>
+        <button type="submit" class="primary-btn auth-submit" style="background:var(--green-primary); margin-top:14px;">Đăng nhập</button>
+      </form>
+      <form class="auth-form" data-auth-form="register" hidden>
+        <label>Họ và tên<input type="text" name="name" required placeholder="Nguyễn Văn An" /></label>
+        <label>Email<input type="email" name="email" required placeholder="an@example.com" /></label>
+        <label>Mật khẩu<input type="password" name="password" required placeholder="••••••••" /></label>
+        <button type="submit" class="primary-btn auth-submit" style="background:var(--green-primary); margin-top:14px;">Đăng ký tài khoản</button>
+      </form>
+    </aside>
+
+    <!-- 8. FOOTER CHUẨN XANH LÁ & TRẮNG -->
+    <footer class="footer-pv">
+      <div class="container-pv">
+        <div class="footer-grid-4">
+          <div class="footer-col">
+            <h4>Hệ Thống Bán Lẻ YuwaShop</h4>
+            <p>Đơn vị tiên phong cung cấp thiết bị công nghệ, máy tính, laptop, linh kiện PC và thiết bị số chính hãng với dịch vụ hậu mãi chu đáo hàng đầu Việt Nam.</p>
+            <p style="margin-top:10px; font-weight:700; color:var(--green-primary);">Hotline: 1800 1234 (8:00 - 21:30)</p>
+          </div>
+          <div class="footer-col">
+            <h4>Chính Sách & Hỗ Trợ</h4>
+            <ul>
+              <li><a href="#">Chính sách bảo hành 1 đổi 1</a></li>
+              <li><a href="#">Vận chuyển & Giao hàng siêu tốc</a></li>
+              <li><a href="#">Hướng dẫn mua hàng trả góp 0%</a></li>
+              <li><a href="#">Chính sách đổi trả trong 30 ngày</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Về YuwaShop</h4>
+            <ul>
+              <li><a href="#">Giới thiệu công ty</a></li>
+              <li><a href="#">Hệ thống 15 cửa hàng toàn quốc</a></li>
+              <li><a href="#">Tuyển dụng nhân tài</a></li>
+              <li><a href="admin/index.html">Dành cho Quản trị viên (Admin)</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Phương Thức Thanh Toán</h4>
+            <p>Hỗ trợ thanh toán linh hoạt bằng Tiền mặt (COD), Chuyển khoản VietQR, Thẻ ATM/Visa và Ví điện tử VNPAY.</p>
+            <div style="font-size:1.8rem; margin-top:10px;">💳 🏦 📱 💵</div>
+          </div>
+        </div>
+        <div class="footer-bottom-bar">
+          <p>© 2026 YuwaShop Management System • Đề tài 01: Website bán thiết bị công nghệ (Khoa CNTT - Học viện Hàng không Việt Nam).</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/data-service.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

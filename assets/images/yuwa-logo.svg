@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">YuwaShop logo</title>
+  <desc id="desc">Round maroon Yuwa logo with an olive green center and white wordmark</desc>
+  <circle cx="256" cy="256" r="256" fill="#a70835"/>
+  <path d="M0 256c92-7 150-35 204-112 20 30 34 48 52 48s32-18 52-48c54 77 112 105 204 112-92 7-150 35-204 112-20-30-34-48-52-48s-32 18-52 48C150 291 92 263 0 256Z" fill="#7d8f57"/>
+  <path d="M222 143c10 26 21 39 34 39s24-13 34-39c8 27 20 45 39 61l-39 30-34-27-34 27-39-30c19-16 31-34 39-61Z" fill="#fff"/>
+  <text x="256" y="288" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-size="66" font-weight="700" letter-spacing="-5">YUWA</text>
+</svg>

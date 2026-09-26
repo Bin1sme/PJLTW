@@ -29,8 +29,42 @@ async function loadComponentSidebar() {
   });
 }
 
+// Nạp header.html (nếu trang có <div id="header-container">) TRƯỚC khi
+// chạy phần code còn lại — để các getElementById của phần tử nằm trong
+// header (nút theme, thông báo, avatar dropdown, đăng xuất...) tìm thấy đúng phần tử.
+async function loadComponentHeader() {
+  const container = document.getElementById('header-container');
+  if (!container) return; // trang không dùng header dùng chung -> bỏ qua
+
+  try {
+    const response = await fetch('header.html');
+    if (response.ok) {
+      container.innerHTML = await response.text();
+    }
+  } catch (err) {
+    console.error('Không thể nạp header:', err);
+  }
+}
+
+// Nạp footer.html (nếu trang có <div id="footer-container">)
+async function loadComponentFooter() {
+  const container = document.getElementById('footer-container');
+  if (!container) return; // trang không dùng footer dùng chung -> bỏ qua
+
+  try {
+    const response = await fetch('footer.html');
+    if (response.ok) {
+      container.innerHTML = await response.text();
+    }
+  } catch (err) {
+    console.error('Không thể nạp footer:', err);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   await loadComponentSidebar();
+  await loadComponentHeader();
+  await loadComponentFooter();
 
   // Khai báo sớm để tránh lỗi "Cannot access before initialization":
   // applyTheme() (chạy ngay bên dưới) gọi updateChartTheme(), hàm này

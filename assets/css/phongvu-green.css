@@ -1,0 +1,1885 @@
+/* ==============================================================================
+   PHONGVU-INSPIRED GREEN & WHITE DESIGN SYSTEM
+   Tông màu chủ đạo: Xanh lá cây (Emerald Green) & Trắng tinh khôi (Clean White)
+   Chuẩn giao diện Thương mại điện tử thiết bị công nghệ hàng đầu
+   ============================================================================== */
+
+:root {
+  /* TÔNG CHỦ ĐẠO: XANH LÁ & TRẮNG */
+  --green-primary: #059669;       /* Xanh lục bảo chủ đạo (Emerald) */
+  --green-hover: #047857;         /* Xanh đậm khi hover */
+  --green-dark: #064e3b;          /* Xanh lá đậm cho thanh tiện ích Topbar */
+  --green-light: #10b981;         /* Xanh lá sáng điểm nhấn */
+  --green-soft: #ecfdf5;          /* Xanh mint nhạt làm nền badge, hover */
+  --green-border: #a7f3d0;        /* Viền xanh nhạt */
+  
+  --white: #ffffff;
+  --bg-page: #f3f4f6;             /* Nền xám nhạt hiện đại giúp card trắng nổi bật */
+  --card-bg: #ffffff;
+  --border-subtle: #e5e7eb;
+  --border-light: #f1f5f9;
+  
+  --text-main: #1f2937;
+  --text-heading: #111827;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+  
+  --price-red: #e11d48;           /* Màu đỏ nổi bật cho giá giảm & tag tiết kiệm */
+  --price-red-soft: #ffe4e6;
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+  --shadow-hover: 0 10px 15px -3px rgba(5, 150, 105, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container-pv {
+  width: min(1320px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* ==============================================================================
+   1. TOP PROMO BANNER & TOP UTILITY BAR (Thanh trên cùng)
+   ============================================================================== */
+.top-strip-banner {
+  background: linear-gradient(90deg, #059669 0%, #10b981 50%, #047857 100%);
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.top-strip-banner a {
+  color: #fef08a;
+  text-decoration: underline;
+  margin-left: 8px;
+}
+
+.top-utility-bar {
+  background: var(--green-dark);
+  color: #e2e8f0;
+  font-size: 0.78rem;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-utility-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.utility-links-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.utility-links-list a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #cbd5e1;
+  transition: color 0.15s;
+}
+
+.utility-links-list a:hover {
+  color: #ffffff;
+}
+
+.hotline-highlight {
+  color: #34d399;
+  font-weight: 700;
+}
+
+/* ==============================================================================
+   2. MAIN HEADER (Trắng tinh khôi với điểm nhấn Xanh lá)
+   ============================================================================== */
+.main-header-pv {
+  background: var(--white);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.header-inner-pv {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 0;
+}
+
+/* Brand Logo */
+.brand-logo-pv {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.logo-icon-grid {
+  width: 38px;
+  height: 38px;
+  background: var(--green-primary);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 6px;
+  gap: 4px;
+}
+
+.logo-icon-grid span {
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.brand-name-text {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--green-primary);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.brand-name-text span {
+  color: var(--text-heading);
+}
+
+/* Search Box with keywords */
+.header-search-wrap {
+  flex: 1;
+  position: relative;
+}
+
+.search-input-group {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 2px solid var(--green-primary);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input-group:focus-within {
+  border-color: var(--green-hover);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+}
+
+.search-input-group input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  outline: none;
+  color: var(--text-main);
+}
+
+.search-btn-pv {
+  background: var(--green-primary);
+  color: #ffffff;
+  border: none;
+  padding: 0 20px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.15s;
+}
+
+.search-btn-pv:hover {
+  background: var(--green-hover);
+}
+
+.quick-search-tags {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.quick-search-tags a {
+  color: var(--text-muted);
+  transition: color 0.15s;
+}
+
+.quick-search-tags a:hover {
+  color: var(--green-primary);
+  text-decoration: underline;
+}
+
+/* Header User Actions */
+.header-actions-pv {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.header-action-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-main);
+  text-align: left;
+  transition: color 0.15s;
+}
+
+.header-action-item:hover {
+  color: var(--green-primary);
+}
+
+.action-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--green-soft);
+  color: var(--green-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.action-badge-count {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--price-red);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+.action-text-meta span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.action-text-meta strong {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+/* ==============================================================================
+   3. HERO SECTION (3 Columns: Vertical Category Menu + Main Slider + Promo Right)
+   ============================================================================== */
+.hero-layout-section {
+  padding: 18px 0;
+}
+
+.hero-grid-3col {
+  display: grid;
+  grid-template-columns: 240px 1fr 270px;
+  gap: 16px;
+  align-items: stretch;
+}
+
+@media (max-width: 1180px) {
+  .hero-grid-3col {
+    grid-template-columns: 230px 1fr;
+  }
+  .hero-right-col {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-grid-3col {
+    grid-template-columns: 1fr;
+  }
+  .category-sidebar-wrap {
+    display: none;
+  }
+}
+
+/* Left: Category Sidebar Menu (Chuẩn Phong Vũ - Icon xám monochrome nét mảnh) */
+.category-sidebar-wrap {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.cat-vertical-menu {
+  list-style: none;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-menu-item {
+  position: relative;
+}
+
+.cat-menu-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7.5px 14px;
+  font-size: 0.835rem;
+  font-weight: 500;
+  color: #1f2937;
+  transition: all 0.15s ease;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+
+.cat-menu-link .pv-menu-svg {
+  width: 19px;
+  height: 19px;
+  color: #71717a;
+  flex-shrink: 0;
+  transition: color 0.15s, stroke 0.15s;
+}
+
+.cat-menu-item:hover .cat-menu-link {
+  background: var(--green-soft);
+  color: var(--green-primary);
+  font-weight: 600;
+  border-left-color: var(--green-primary);
+}
+
+.cat-menu-item:hover .pv-menu-svg {
+  color: var(--green-primary);
+  stroke: var(--green-primary);
+}
+
+.cat-menu-link span.cat-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.35;
+}
+
+/* MEGA MENU FLYOUT (Hiện ra khi rê chuột vào mục Danh mục - Chuẩn ảnh 2) */
+.mega-menu-flyout {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 780px;
+  min-height: 100%;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+  display: none;
+  z-index: 1050;
+}
+
+.cat-menu-item:hover .mega-menu-flyout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 220px;
+  gap: 20px;
+}
+
+.mega-col-group h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--green-primary);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--green-soft);
+}
+
+.mega-col-group ul {
+  list-style: none;
+}
+
+.mega-col-group li {
+  margin-bottom: 8px;
+}
+
+.mega-col-group a {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  transition: color 0.15s;
+}
+
+.mega-col-group a:hover {
+  color: var(--green-primary);
+  font-weight: 600;
+}
+
+.mega-banner-ad {
+  background: var(--green-soft);
+  border: 1px dashed var(--green-border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mega-banner-ad h5 {
+  color: var(--green-primary);
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+/* Center: Main Slider Banner */
+.hero-center-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-main-banner-card {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 28px 36px;
+  min-height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.banner-content-left {
+  max-width: 58%;
+  z-index: 2;
+}
+
+.banner-pill-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.banner-content-left h2 {
+  font-size: 2.1rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.banner-content-left p {
+  font-size: 0.95rem;
+  color: #ecfdf5;
+  margin-bottom: 20px;
+}
+
+.banner-btn-cta {
+  background: #ffffff;
+  color: var(--green-primary);
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  display: inline-block;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.banner-btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.banner-image-wrap {
+  width: 38%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-image-wrap img {
+  max-height: 250px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.25));
+}
+
+/* 4 Mini Promo Deals below Slider (Ảnh 1) */
+.sub-promos-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.sub-promo-card {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.sub-promo-card:hover {
+  border-color: var(--green-primary);
+  background: var(--green-soft);
+  transform: translateY(-2px);
+}
+
+.sub-promo-icon {
+  font-size: 1.4rem;
+}
+
+.sub-promo-card h5 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 2px;
+}
+
+.sub-promo-card span {
+  font-size: 0.72rem;
+  color: var(--price-red);
+  font-weight: 600;
+}
+
+/* Right: 2 Stacked Promotion Banners (Ảnh 1) */
+.hero-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.promo-stack-card {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border-top: 4px solid var(--green-primary);
+  transition: transform 0.2s;
+}
+
+.promo-stack-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.promo-stack-card span.badge-pv {
+  background: var(--green-soft);
+  color: var(--green-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.promo-stack-card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+
+.promo-stack-card p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.promo-discount-bold {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--price-red);
+}
+
+/* ==============================================================================
+   4. QUICK FEATURE STRIP (8 Icons ưu đãi hot - Ảnh 1)
+   ============================================================================== */
+.quick-features-bar {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.quick-features-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 992px) {
+  .quick-features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .quick-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.quick-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.quick-feature-item:hover {
+  transform: translateY(-3px);
+}
+
+.feature-circle-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--green-soft);
+  color: var(--green-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.quick-feature-item:hover .feature-circle-icon {
+  background: var(--green-primary);
+  color: #ffffff;
+}
+
+.quick-feature-item span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+/* ==============================================================================
+   5. PRODUCT SECTION & CARDS (Chuẩn Phong Vũ: Tiết kiệm, Specs, Nền trắng)
+   ============================================================================== */
+.product-showcase-section {
+  margin-bottom: 32px;
+}
+
+.section-head-pv {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-bottom: none;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-head-pv h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-head-pv h2::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: var(--green-primary);
+  border-radius: 2px;
+}
+
+.head-filter-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.head-tab-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  background: #f8fafc;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.head-tab-btn:hover,
+.head-tab-btn.active {
+  background: var(--green-primary);
+  color: #ffffff;
+  border-color: var(--green-primary);
+}
+
+.head-view-all-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--green-primary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.head-view-all-link:hover {
+  text-decoration: underline;
+}
+
+/* Product Cards Grid */
+.products-grid-pv {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+  .products-grid-pv { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .products-grid-pv { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .products-grid-pv { grid-template-columns: repeat(2, 1fr); }
+}
+
+.pv-product-card {
+  padding: 16px;
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--white);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  position: relative;
+}
+
+.pv-product-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+  border-color: var(--green-primary);
+}
+
+.save-money-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--price-red);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.pv-card-thumb {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 14px 0 10px;
+}
+
+.pv-card-thumb img {
+  max-height: 160px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.2s;
+}
+
+.pv-product-card:hover .pv-card-thumb img {
+  transform: scale(1.05);
+}
+
+.pv-brand-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--green-primary);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.pv-card-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  line-height: 1.35;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.7em;
+}
+
+.pv-card-specs {
+  background: #f8fafc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pv-price-row {
+  margin-bottom: 12px;
+}
+
+.pv-current-price {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--price-red);
+  display: block;
+}
+
+.pv-old-price {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  text-decoration: line-through;
+}
+
+.pv-btn-add-cart {
+  width: 100%;
+  padding: 8px;
+  background: var(--green-soft);
+  color: var(--green-primary);
+  border: 1px solid var(--green-border);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+
+.pv-btn-add-cart:hover {
+  background: var(--green-primary);
+  color: #ffffff;
+}
+
+/* ==============================================================================
+   6. SUB-CATEGORY ICON GRID (Theo ảnh 3 - Phong Vũ Linh kiện)
+   ============================================================================== */
+.subcat-icons-section {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 24px;
+}
+
+.subcat-icons-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.subcat-grid-8 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 992px) {
+  .subcat-grid-8 { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .subcat-grid-8 { grid-template-columns: repeat(2, 1fr); }
+}
+
+.subcat-icon-card {
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 12px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.subcat-icon-card:hover {
+  border-color: var(--green-primary);
+  box-shadow: 0 4px 10px rgba(5, 150, 105, 0.1);
+}
+
+.subcat-icon-thumb {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.subcat-icon-card span {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+/* ==============================================================================
+   7. FOOTER CHUẨN XANH LÁ & TRẮNG
+   ============================================================================== */
+.footer-pv {
+  background: var(--white);
+  border-top: 1px solid var(--border-subtle);
+  padding: 40px 0 20px;
+  margin-top: 40px;
+  color: var(--text-main);
+}
+
+.footer-grid-4 {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 900px) {
+  .footer-grid-4 { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 500px) {
+  .footer-grid-4 { grid-template-columns: 1fr; }
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--green-primary);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.footer-col p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  transition: color 0.15s;
+}
+
+.footer-col a:hover {
+  color: var(--green-primary);
+  text-decoration: underline;
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+
+/* ==============================================================================
+   8. BREADCRUMBS (Đường dẫn trang - Chuẩn Phong Vũ)
+   ============================================================================== */
+.pv-breadcrumb-bar {
+  padding: 12px 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.pv-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pv-breadcrumb a {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s;
+}
+
+.pv-breadcrumb a:hover {
+  color: var(--green-primary);
+}
+
+.pv-breadcrumb .sep {
+  color: #cbd5e1;
+  font-size: 0.75rem;
+}
+
+.pv-breadcrumb .current {
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+/* ==============================================================================
+   9. CATALOG LAYOUT & FILTER SIDEBAR (Chuẩn ảnh 3 - Phong Vũ)
+   ============================================================================== */
+.pv-catalog-page {
+  padding-bottom: 40px;
+}
+
+.pv-catalog-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.pv-catalog-title-row h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-heading);
+}
+
+.pv-catalog-title-row .count-badge {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.pv-catalog-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .pv-catalog-layout {
+    grid-template-columns: 1fr;
+  }
+  .pv-filter-sidebar {
+    display: none;
+  }
+  .pv-filter-sidebar.open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 2000;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+  }
+}
+
+/* Filter Sidebar */
+.pv-filter-sidebar {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.pv-filter-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 12px;
+}
+
+.pv-filter-head h2 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pv-filter-clear {
+  font-size: 0.78rem;
+  color: var(--green-primary);
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.pv-filter-clear:hover {
+  text-decoration: underline;
+}
+
+.pv-filter-group {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pv-filter-group:last-child {
+  border-bottom: none;
+}
+
+.pv-filter-group-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pv-filter-group-title .toggle-icon {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* Khoảng giá (Price range inputs + track) */
+.pv-price-range-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pv-price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pv-price-input {
+  flex: 1;
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  text-align: center;
+}
+
+.pv-price-input:focus {
+  outline: none;
+  border-color: var(--green-primary);
+  background: #ffffff;
+}
+
+.pv-price-range-slider {
+  position: relative;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  margin: 10px 4px 6px;
+}
+
+.pv-price-range-fill {
+  position: absolute;
+  left: 0;
+  width: 75%;
+  height: 100%;
+  background: var(--green-primary);
+  border-radius: 3px;
+}
+
+.pv-price-thumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background: var(--white);
+  border: 2px solid var(--green-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.pv-price-thumb.left { left: 0%; }
+.pv-price-thumb.right { left: 75%; }
+
+/* Checkbox filter lists */
+.pv-filter-options {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.pv-filter-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--text-main);
+  cursor: pointer;
+  user-select: none;
+}
+
+.pv-filter-label:hover {
+  color: var(--green-primary);
+}
+
+.pv-filter-label input[type="checkbox"],
+.pv-filter-label input[type="radio"] {
+  accent-color: var(--green-primary);
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.pv-filter-check-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.pv-filter-count {
+  font-size: 0.72rem;
+  color: var(--text-light);
+}
+
+.pv-filter-more-btn {
+  background: none;
+  border: none;
+  color: var(--green-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: 8px;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.pv-filter-more-btn:hover {
+  text-decoration: underline;
+}
+
+/* Right Content Area */
+.pv-catalog-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Highlight section ("Các sản phẩm linh kiện máy tính nổi bật" - Image 3) */
+.pv-featured-block {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 20px;
+}
+
+.pv-featured-header {
+  background: linear-gradient(90deg, #059669 0%, #10b981 100%);
+  color: #ffffff;
+  padding: 12px 20px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.pv-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: none;
+}
+
+@media (max-width: 1200px) {
+  .pv-featured-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 860px) {
+  .pv-featured-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Catalog Toolbar */
+.pv-toolbar {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.pv-toolbar-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pv-toolbar-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pv-toolbar-sort span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.pv-toolbar-sort select {
+  padding: 6px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.pv-toolbar-sort select:focus {
+  outline: none;
+  border-color: var(--green-primary);
+}
+
+.mobile-filter-btn {
+  display: none;
+  background: var(--green-soft);
+  color: var(--green-primary);
+  border: 1px solid var(--green-border);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .mobile-filter-btn { display: inline-flex; align-items: center; gap: 6px; }
+}
+
+/* Pagination */
+.pv-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.pv-page-btn {
+  min-width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  background: var(--white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.15s;
+  padding: 0 8px;
+}
+
+.pv-page-btn:hover {
+  border-color: var(--green-primary);
+  color: var(--green-primary);
+}
+
+.pv-page-btn.active {
+  background: var(--green-primary);
+  color: #ffffff;
+  border-color: var(--green-primary);
+}
+
+.pv-page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==============================================================================
+   10. PRODUCT DETAIL PAGE (Chuẩn Phong Vũ Green & White)
+   ============================================================================== */
+.pv-detail-wrapper {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.pv-detail-layout {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 992px) {
+  .pv-detail-layout { grid-template-columns: 1fr; }
+}
+
+/* Detail Gallery */
+.pv-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pv-gallery-main {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #ffffff;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.pv-gallery-main img {
+  max-height: 360px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.pv-gallery-main:hover img {
+  transform: scale(1.08);
+}
+
+.pv-gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.pv-gallery-thumb {
+  width: 72px;
+  height: 72px;
+  border: 2px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 4px;
+  cursor: pointer;
+  background: #ffffff;
+  transition: border-color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pv-gallery-thumb.active,
+.pv-gallery-thumb:hover {
+  border-color: var(--green-primary);
+}
+
+.pv-gallery-thumb img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Detail Info */
+.pv-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pv-detail-brand {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--green-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pv-detail-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  line-height: 1.3;
+}
+
+.pv-detail-rating-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.pv-stars {
+  color: #f59e0b;
+  letter-spacing: 1px;
+}
+
+.pv-detail-price-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.pv-detail-cur-price {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--price-red);
+}
+
+.pv-detail-old-price {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  text-decoration: line-through;
+}
+
+.pv-detail-save-badge {
+  background: var(--price-red-soft);
+  color: var(--price-red);
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* Promo Box (Khuyến mãi tặng kèm phong vũ) */
+.pv-promo-box {
+  border: 1px solid var(--green-border);
+  border-radius: var(--radius-md);
+  background: var(--green-soft);
+  padding: 16px;
+}
+
+.pv-promo-box-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--green-primary);
+  margin-bottom: 10px;
+}
+
+.pv-promo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pv-promo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.pv-promo-badge {
+  background: var(--green-primary);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Variants (RAM, SSD, Color) */
+.pv-variant-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pv-variant-group h4 {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.pv-variant-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pv-variant-pill {
+  padding: 8px 16px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.pv-variant-pill:hover,
+.pv-variant-pill.active {
+  border-color: var(--green-primary);
+  color: var(--green-primary);
+  background: var(--green-soft);
+  font-weight: 700;
+}
+
+/* Action CTAs */
+.pv-action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+@media (max-width: 540px) {
+  .pv-action-row { grid-template-columns: 1fr; }
+}
+
+.pv-btn-buy-now {
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.pv-btn-buy-now small {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
+.pv-btn-buy-now:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
+
+.pv-btn-add-cart-detail {
+  padding: 14px 20px;
+  background: var(--green-soft);
+  color: var(--green-primary);
+  border: 1.5px solid var(--green-primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.pv-btn-add-cart-detail small {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--green-hover);
+  margin-top: 2px;
+}
+
+.pv-btn-add-cart-detail:hover {
+  background: var(--green-primary);
+  color: #ffffff;
+}
+
+.pv-btn-add-cart-detail:hover small {
+  color: #ecfdf5;
+}
+
+/* Service Policy Pills */
+.pv-policy-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .pv-policy-row { grid-template-columns: 1fr; }
+}
+
+.pv-policy-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.pv-policy-item .icon {
+  color: var(--green-primary);
+  font-size: 1.1rem;
+}
+
+/* Specifications Table Block */
+.pv-specs-container {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 992px) {
+  .pv-specs-container { grid-template-columns: 1fr; }
+}
+
+.pv-description-card,
+.pv-specs-card {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.pv-card-heading {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--green-soft);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pv-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pv-specs-table tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.pv-specs-table td {
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.pv-specs-table td:first-child {
+  color: var(--text-muted);
+  width: 38%;
+  font-weight: 500;
+}
+
+.pv-specs-table td:last-child {
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
