@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promotions | AdminPro YuwaShop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/adminpro.css" />
+
+</head>
+
+<body>
+  <div class="admin-wrapper">
+    <!-- Kết nối với sidebar.html -->
+    <div id="sidebar-container"></div>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+
+      <!-- Kết nối với header.html -->
+      <div id="header-container"></div>
+
+
+      <div class="admin-content">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>›</span> Promotions</div>
+        <div class="page-header">
+          <div>
+            <div class="page-title">Quản lý Khuyến mãi</div>
+            <div class="page-subtitle">Tạo và quản lý mã giảm giá, chương trình flash sale</div>
+          </div>
+          <button class="btn-primary" id="btnTaoMa">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Tạo mã mới
+          </button>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon purple"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M20 12V22H4V12"></path>
+                <path d="M22 7H2v5h20V7z"></path>
+                <path d="M12 22V7"></path>
+                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+              </svg></div>
+            <div class="kpi-label">Tổng mã giảm giá</div>
+            <div class="kpi-value">84</div><span class="kpi-badge up">Đang có</span>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg></div>
+            <div class="kpi-label">Đang hoạt động</div>
+            <div class="kpi-value">23</div><span class="kpi-badge up">Còn hiệu lực</span>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg></div>
+            <div class="kpi-label">Lượt sử dụng</div>
+            <div class="kpi-value">1,439</div><span class="kpi-badge up">+18% tháng này</span>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon red"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg></div>
+            <div class="kpi-label">Đã hết hạn</div>
+            <div class="kpi-value">61</div><span class="kpi-badge gray">Đã kết thúc</span>
+          </div>
+        </div>
+
+        <div class="table-toolbar">
+          <div class="toolbar-left">
+            <div class="search-input-wrap">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="search" name="promo_search" placeholder="Tìm mã voucher..." />
+            </div>
+            <select class="select-filter" name="filter_type">
+              <option>Tất cả loại</option>
+              <option>Giảm %</option>
+              <option>Giảm tiền cố định</option>
+              <option>Miễn phí vận chuyển</option>
+            </select>
+            <select class="select-filter" name="filter_status">
+              <option>Tất cả trạng thái</option>
+              <option>Đang hoạt động</option>
+              <option>Hết hạn</option>
+              <option>Tạm dừng</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th><input type="checkbox" name="select_all" /></th>
+                <th>Mã voucher</th>
+                <th>Loại giảm</th>
+                <th>Giá trị</th>
+                <th>Điều kiện tối thiểu</th>
+                <th>Hạn dùng</th>
+                <th>Đã dùng / Giới hạn</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" name="select_promo" /></td>
+                <td><span class="code-chip">SALE10</span></td>
+                <td>Giảm %</td>
+                <td class="text-danger font-bold">10%</td>
+                <td>500,000 ₫</td>
+                <td>31/12/2026</td>
+                <td>248 / 500</td>
+                <td><span class="badge badge-success">Hoạt động</span></td>
+                <td>
+                  <div class="action-btns"><button class="action-btn">Sửa</button><button class="action-btn danger">Tạm
+                      dừng</button></div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select_promo" /></td>
+                <td><span class="code-chip">FREESHIP</span></td>
+                <td>Miễn ship</td>
+                <td class="text-danger font-bold">0 ₫ ship</td>
+                <td>300,000 ₫</td>
+                <td>15/10/2026</td>
+                <td>892 / 1000</td>
+                <td><span class="badge badge-success">Hoạt động</span></td>
+                <td>
+                  <div class="action-btns"><button class="action-btn">Sửa</button><button class="action-btn danger">Tạm
+                      dừng</button></div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select_promo" /></td>
+                <td><span class="code-chip">FLASH200K</span></td>
+                <td>Giảm tiền</td>
+                <td class="text-danger font-bold">200,000 ₫</td>
+                <td>2,000,000 ₫</td>
+                <td>05/10/2026</td>
+                <td>150 / 150</td>
+                <td><span class="badge badge-warning">Đã hết lượt</span></td>
+                <td>
+                  <div class="action-btns"><button class="action-btn">Gia hạn</button><button
+                      class="action-btn danger">Xóa</button></div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select_promo" /></td>
+                <td><span class="code-chip">NEWMEMBER</span></td>
+                <td>Giảm %</td>
+                <td class="text-danger font-bold">15%</td>
+                <td>0 ₫ (Không giới hạn)</td>
+                <td>31/12/2026</td>
+                <td>56 / ∞</td>
+                <td><span class="badge badge-success">Hoạt động</span></td>
+                <td>
+                  <div class="action-btns"><button class="action-btn">Sửa</button><button class="action-btn danger">Tạm
+                      dừng</button></div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select_promo" /></td>
+                <td><span class="code-chip">SUMMER23</span></td>
+                <td>Giảm %</td>
+                <td class="text-muted font-bold">20%</td>
+                <td>1,000,000 ₫</td>
+                <td>31/08/2023</td>
+                <td>1,200 / 1,000</td>
+                <td><span class="badge badge-danger">Hết hạn</span></td>
+                <td>
+                  <div class="action-btns"><button class="action-btn">Xem</button><button
+                      class="action-btn danger">Xóa</button></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pagination-row">
+            <span>Hiển thị 1–5 / 84 mã khuyến mãi</span>
+            <div class="pagination-btns">
+              <button class="pg-btn">‹</button>
+              <button class="pg-btn active">1</button>
+              <button class="pg-btn">2</button>
+              <button class="pg-btn">3</button>
+              <button class="pg-btn">›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semantic Footer -->
+      <!-- Kết nối với footer.html -->
+      <div id="footer-container"></div>
+    </main>
+  </div>
+
+  <!-- Modal Tạo mã -->
+  <div class="modal-overlay" id="modalTaoMa">
+    <div class="modal-box">
+      <div class="modal-title">🎟️ Tạo mã khuyến mãi mới</div>
+      <div class="form-grid2">
+        <div class="form-row">
+          <label class="form-label">Mã voucher <span class="required-star">*</span></label>
+          <input class="form-input text-uppercase" type="text" name="promo_code" placeholder="VD: SALE10, FLASH50K..."
+            data-required data-label="Mã voucher" />
+          <div class="field-error"></div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Loại giảm giá</label>
+          <select class="form-input" name="promo_discount_type">
+            <option>Giảm theo %</option>
+            <option>Giảm tiền cố định</option>
+            <option>Miễn phí vận chuyển</option>
+          </select>
+          <div class="field-error"></div>
+        </div>
+      </div>
+      <div class="form-grid3">
+        <div class="form-row">
+          <label class="form-label">Giá trị giảm <span class="required-star">*</span></label>
+          <input class="form-input" type="number" name="promo_discount_value" placeholder="10" data-required
+            data-label="Giá trị giảm" />
+          <div class="field-error"></div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Đơn tối thiểu (₫) <span class="required-star">*</span></label>
+          <input class="form-input" type="number" name="promo_min_order" placeholder="500000" data-required
+            data-label="Đơn tối thiểu" />
+          <div class="field-error"></div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Giới hạn sử dụng <span class="required-star">*</span></label>
+          <input class="form-input" type="number" name="promo_usage_limit" placeholder="100" data-required
+            data-label="Giới hạn sử dụng" />
+          <div class="field-error"></div>
+        </div>
+      </div>
+      <div class="form-grid2">
+        <div class="form-row">
+          <label class="form-label">Ngày bắt đầu <span class="required-star">*</span></label>
+          <input class="form-input" type="date" name="promo_start_date" data-required data-label="Ngày bắt đầu" />
+          <div class="field-error"></div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Ngày kết thúc <span class="required-star">*</span></label>
+          <input class="form-input" type="date" name="promo_end_date" data-required data-label="Ngày kết thúc" />
+          <div class="field-error"></div>
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="form-label">Mô tả</label>
+        <input class="form-input" type="text" name="promo_description"
+          placeholder="Mô tả ngắn về mã khuyến mãi (không bắt buộc)..." />
+        <div class="field-error"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-outline"
+          onclick="document.getElementById('modalTaoMa').classList.remove('show')">Hủy</button>
+        <button class="btn-primary" id="btnConfirmTaoMa">Tạo mã</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/adminpro.js"></script>
+  <script src="assets/js/toast.js"></script>
+  <script>
+    // Mở modal tạo mã
+    document.getElementById('btnTaoMa')?.addEventListener('click', () => document.getElementById('modalTaoMa').classList.add('show'));
+    document.getElementById('modalTaoMa')?.addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.classList.remove('show'); });
+
+    // Confirm tạo mã → validate trước khi hiện success modal
+    document.getElementById('btnConfirmTaoMa')?.addEventListener('click', () => {
+      const modalBox = document.querySelector('#modalTaoMa .modal-box');
+      if (!validateForm(modalBox)) return;
+
+      document.getElementById('modalTaoMa').classList.remove('show');
+      showSuccessModal('Tạo mã thành công!', 'Mã khuyến mãi đã được kích hoạt và sẵn sàng sử dụng.');
+
+      // Reset form
+      modalBox.querySelectorAll('.form-input').forEach(el => {
+        if (el.tagName !== 'SELECT') el.value = '';
+        el.classList.remove('is-valid', 'is-invalid');
+      });
+      modalBox.querySelectorAll('.field-error').forEach(err => err.textContent = '');
+    });
+
+    // Nút thao tác trong bảng
+    document.querySelectorAll('.action-btn').forEach(btn => {
+      const txt = btn.textContent.trim();
+      btn.removeAttribute('onclick');
+      btn.addEventListener('click', () => {
+        if (txt === 'Sửa') showToast('Đang mở form chỉnh sửa mã...', 'info');
+        else if (txt === 'Tạm dừng') showConfirm({ title: 'Tạm dừng mã?', message: 'Mã giảm giá sẽ không thể sử dụng cho đến khi bật lại.', confirmText: 'Tạm dừng', type: 'warning', onConfirm: () => showToast('Đã tạm dừng mã giảm giá.', 'warning') });
+        else if (txt === 'Gia hạn') showToast('Đã gia hạn mã thêm 30 ngày.', 'success');
+        else if (txt === 'Xóa') showConfirm({ title: 'Xóa mã vĩnh viễn?', message: 'Hành động này không thể hoàn tác.', confirmText: 'Xóa', type: 'danger', onConfirm: () => showToast('Đã xóa mã khuyến mãi.', 'error') });
+        else if (txt === 'Xem') showToast('Đang tải chi tiết mã...', 'info');
+      });
+    });
+  </script>
+</body>
+
+</html>

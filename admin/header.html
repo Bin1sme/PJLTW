@@ -1,0 +1,58 @@
+<!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <button class="btn-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Thu gọn sidebar">
+            ☰
+          </button>
+          <div class="topbar-search">
+            <span class="search-icon">⌕</span>
+            <input type="search" name="search_query" placeholder="Search..." />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Nút chỉnh Sáng/Tối -->
+          <button class="theme-switch-btn" id="themeToggleBtn" type="button" title="Chuyển đổi giao diện">
+            <span id="themeIcon">☀️</span>
+            <span id="themeText">Giao diện Sáng</span>
+          </button>
+
+          <!-- Notifications & Tasks -->
+          <button class="topbar-icon-btn" type="button" aria-label="Thông báo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="badge-dot"></span>
+          </button>
+
+          <button class="topbar-icon-btn" type="button" aria-label="Tin nhắn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </button>
+
+          <!-- User Avatar in Topbar with Dropdown -->
+          <div class="topbar-user-dropdown">
+            <div class="topbar-user-pill" id="topbarUserPill">
+              <img id="topbarAvatarImg"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+                alt="Avatar" />
+            </div>
+
+            <div class="user-dropdown-menu" id="userDropdownMenu">
+              <div class="dropdown-user-header">
+                <h5 id="dropdownUserName">Quản Trị Viên</h5>
+                <p id="dropdownUserEmail">admin@minishop.local</p>
+              </div>
+              <button class="dropdown-item-btn" type="button" id="btnOpenAvatarModal">
+                🎨 Tùy chỉnh Avatar & Tên
+              </button>
+              <button class="dropdown-item-btn logout" type="button" id="btnLogout">
+                🚪 Đăng xuất hệ thống
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>

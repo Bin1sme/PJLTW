@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audit Log | AdminPro YuwaShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/adminpro.css" />
+  </head>
+  <body>
+    <div class="admin-wrapper">
+        <!-- Kết nối với sidebar.html -->
+        <div id="sidebar-container"></div>
+
+      <main class="admin-main">
+       
+      <!-- Kết nối với header.html -->  
+      <div id="header-container"></div>
+
+        <div class="admin-content">
+          <div class="breadcrumb"><a href="index.html">Home</a><span>›</span> Audit log</div>
+          <div class="page-header">
+            <div>
+              <div class="page-title">Nhật ký hoạt động</div>
+              <div class="page-subtitle">Theo dõi mọi thao tác của quản trị viên và nhân viên trong hệ thống</div>
+            </div>
+            <button class="btn-outline" onclick="showToast('Đang xuất nhật ký ra CSV, vui lòng chờ...', 'info')">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Xuất CSV
+            </button>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="kpi-card"><div class="kpi-icon blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><div class="kpi-label">Hoạt động hôm nay</div><div class="kpi-value">248</div><span class="kpi-badge up">Bình thường</span></div>
+            <div class="kpi-card"><div class="kpi-icon green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div><div class="kpi-label">Thao tác tạo mới</div><div class="kpi-value">34</div><span class="kpi-badge up">+12 so hôm qua</span></div>
+            <div class="kpi-card"><div class="kpi-icon orange"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></div><div class="kpi-label">Thao tác chỉnh sửa</div><div class="kpi-value">89</div><span class="kpi-badge gray">Bình thường</span></div>
+            <div class="kpi-card"><div class="kpi-icon red"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg></div><div class="kpi-label">Thao tác xóa</div><div class="kpi-value">5</div><span class="kpi-badge warn">Cần chú ý</span></div>
+          </div>
+
+          <!-- Filter -->
+          <div class="filter-bar">
+            <div class="filter-group"><label>Từ ngày:</label><input class="date-input" type="date" name="from_date" value="2026-09-01" /></div>
+            <div class="filter-group"><label>Đến ngày:</label><input class="date-input" type="date" name="to_date" value="2026-09-22" /></div>
+            <div class="filter-group"><label>Người dùng:</label><select class="select-filter" name="user"><option value="">Tất cả</option><option value="admin@yuwa.vn">admin@yuwa.vn</option><option value="manager@yuwa.vn">manager@yuwa.vn</option><option value="editor@yuwa.vn">editor@yuwa.vn</option></select></div>
+            <div class="filter-group"><label>Hành động:</label><select class="select-filter" name="action"><option value="">Tất cả</option><option value="create">Tạo mới</option><option value="update">Chỉnh sửa</option><option value="delete">Xóa</option><option value="login">Đăng nhập</option><option value="export">Xuất dữ liệu</option></select></div>
+            <button class="btn-primary" type="button">Lọc</button>
+          </div>
+
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Thời gian</th>
+                  <th>Người dùng</th>
+                  <th>Hành động</th>
+                  <th>Đối tượng</th>
+                  <th>Chi tiết</th>
+                  <th>IP Address</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="log-time">22/09/2026<br/>12:45:03</div></td>
+                  <td><div class="user-cell"><img class="user-avatar-sm" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=40&q=80" alt="" /><span>admin@yuwa.vn</span></div></td>
+                  <td><span class="action-pill action-update">Chỉnh sửa</span></td>
+                  <td>Sản phẩm #1042</td>
+                  <td><div class="detail-text">Cập nhật giá từ 14,500,000₫ → 13,900,000₫</div></td>
+                  <td><span class="ip-chip">192.168.1.5</span></td>
+                </tr>
+                <tr>
+                  <td><div class="log-time">22/09/2026<br/>11:30:47</div></td>
+                  <td><div class="user-cell"><img class="user-avatar-sm" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&q=80" alt="" /><span>manager@yuwa.vn</span></div></td>
+                  <td><span class="action-pill action-create">Tạo mới</span></td>
+                  <td>Mã KM: SALE10</td>
+                  <td><div class="detail-text">Tạo mã giảm giá 10%, hiệu lực đến 31/12/2026</div></td>
+                  <td><span class="ip-chip">10.0.0.12</span></td>
+                </tr>
+                <tr>
+                  <td><div class="log-time">22/09/2026<br/>10:15:22</div></td>
+                  <td><div class="user-cell"><img class="user-avatar-sm" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=40&q=80" alt="" /><span>admin@yuwa.vn</span></div></td>
+                  <td><span class="action-pill action-login"></span>Đăng nhập</span></td>
+                  <td>Hệ thống</td>
+                  <td><div class="detail-text">Đăng nhập thành công từ Chrome 126 / Windows 11</div></td>
+                  <td><span class="ip-chip">42.116.8.201</span></td>
+                </tr>
+                <tr>
+                  <td><div class="log-time">22/09/2026<br/>09:48:11</div></td>
+                  <td><div class="user-cell"><img class="user-avatar-sm" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&q=80" alt="" /><span>editor@yuwa.vn</span></div></td>
+                  <td><span class="action-pill action-create"></span>Tạo mới</span></td>
+                  <td>Sản phẩm mới</td>
+                  <td><div class="detail-text">Thêm sản phẩm "Bàn phím Keychron K2 Pro" vào danh mục Phụ kiện</div></td>
+                  <td><span class="ip-chip">192.168.1.22</span></td>
+                </tr>
+                <tr>
+                  <td><div class="log-time">21/09/2026<br/>17:30:05</div></td>
+                  <td><div class="user-cell"><img class="user-avatar-sm" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=40&q=80" alt="" /><span>admin@yuwa.vn</span></div></td>
+                  <td><span class="action-pill action-delete">Xóa</span></td>
+                  <td>Đơn hàng #8821</td>
+                  <td><div class="detail-text">Xóa đơn hàng nháp chưa thanh toán sau 7 ngày</div></td>
+                  <td><span class="ip-chip">192.168.1.5</span></td>
+                </tr>
+                <tr>
+                  <td><div class="log-time">21/09/2026<br/>15:12:44</div></td>
+                  <td><div class="user-cell"><img class="user-avatar-sm" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&q=80" alt="" /><span>manager@yuwa.vn</span></div></td>
+                  <td><span class="action-pill action-export">Xuất dữ liệu</span></td>
+                  <td>Báo cáo tháng 9</td>
+                  <td><div class="detail-text">Xuất báo cáo doanh thu tháng 9/2026 ra file Excel</div></td>
+                  <td><span class="ip-chip">10.0.0.12</span></td>
+                </tr>
+                <tr>
+                  <td><div class="log-time">21/09/2026<br/>08:05:19</div></td>
+                  <td><div class="user-cell"><img class="user-avatar-sm" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&q=80" alt="" /><span>viewer@yuwa.vn</span></div></td>
+                  <td><span class="action-pill action-logout">Đăng xuất</span></td>
+                  <td>Hệ thống</td>
+                  <td><div class="detail-text">Đăng xuất sau 30 phút không hoạt động (tự động)</div></td>
+                  <td><span class="ip-chip">172.16.4.88</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pagination-row">
+              <span>Hiển thị 1–7 / 248 bản ghi hôm nay</span>
+              <div class="pagination-btns">
+                <button class="pg-btn">‹</button>
+                <button class="pg-btn active">1</button>
+                <button class="pg-btn">2</button>
+                <button class="pg-btn">3</button>
+                <button class="pg-btn">...</button>
+                <button class="pg-btn">36</button>
+                <button class="pg-btn">›</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Semantic Footer -->
+        <!-- Kết nối với footer.html -->
+        <div id="footer-container"></div>
+      </main>
+    </div>
+    <script src="assets/js/adminpro.js"></script>
+    <script src="assets/js/toast.js"></script>
+    <script>
+      // Nút xuất CSV
+      document.querySelectorAll('.btn-outline').forEach(btn => {
+        if (btn.textContent.trim().includes('Xuất CSV')) {
+          btn.removeAttribute('onclick');
+          btn.addEventListener('click', () => showToast('Đang xuất nhật ký ra CSV, vui lòng chờ...', 'info', 3000));
+        }
+      });
+
+      // Nút lọc
+      document.querySelectorAll('.btn-primary').forEach(btn => {
+        if (btn.textContent.trim() === 'Lọc') {
+          btn.addEventListener('click', () => showToast('Đã áp dụng bộ lọc.', 'success', 2000));
+        }
+      });
+    </script>
+  </body>
+</html>
